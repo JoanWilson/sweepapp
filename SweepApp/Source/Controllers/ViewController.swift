@@ -9,11 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    fileprivate let viewModel = ViewModel()
+    
+    override func loadView() {
+        self.view = View()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .blue
     }
-
+    
 
 }
-

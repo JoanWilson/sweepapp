@@ -12,12 +12,16 @@
 		3FA9975C28CB646C00597EFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9975B28CB646C00597EFF /* AppDelegate.swift */; };
 		3FA9975E28CB646C00597EFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9975D28CB646C00597EFF /* SceneDelegate.swift */; };
 		3FA9976028CB646C00597EFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9975F28CB646C00597EFF /* ViewController.swift */; };
-		3FA9976328CB646C00597EFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA9976128CB646C00597EFF /* Main.storyboard */; };
 		3FA9976528CB646F00597EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA9976428CB646F00597EFF /* Assets.xcassets */; };
 		3FA9976828CB646F00597EFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA9976628CB646F00597EFF /* LaunchScreen.storyboard */; };
 		3FA9977328CB646F00597EFF /* SweepAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977228CB646F00597EFF /* SweepAppTests.swift */; };
 		3FA9977D28CB646F00597EFF /* SweepAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977C28CB646F00597EFF /* SweepAppUITests.swift */; };
 		3FA9977F28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977E28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift */; };
+		85526B5728CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85526B5528CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld */; };
+		85526B6128CB860E00A7C790 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6028CB860E00A7C790 /* View.swift */; };
+		85526B6328CB863500A7C790 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6228CB863500A7C790 /* ViewModel.swift */; };
+		85526B6528CB866700A7C790 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6428CB866700A7C790 /* Service.swift */; };
+		85526B6728CB868300A7C790 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6628CB868300A7C790 /* Task.swift */; };
 		E52DD3D389139AA478139954 /* Pods_SweepApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 567DA25A29E41546A0BFD403 /* Pods_SweepApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +50,6 @@
 		3FA9975B28CB646C00597EFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FA9975D28CB646C00597EFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3FA9975F28CB646C00597EFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3FA9976228CB646C00597EFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FA9976428CB646F00597EFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FA9976728CB646F00597EFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FA9976928CB646F00597EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +61,11 @@
 		567DA25A29E41546A0BFD403 /* Pods_SweepApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SweepApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7676043A4293BD7D2FE2252A /* Pods-SweepAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepAppTests.release.xcconfig"; path = "Target Support Files/Pods-SweepAppTests/Pods-SweepAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		81D29A45235440DF1E818E77 /* Pods_SweepApp_SweepAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SweepApp_SweepAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85526B5628CB7F3700A7C790 /* SweepAppDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SweepAppDatabase.xcdatamodel; sourceTree = "<group>"; };
+		85526B6028CB860E00A7C790 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		85526B6228CB863500A7C790 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		85526B6428CB866700A7C790 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		85526B6628CB868300A7C790 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		AF58D6E0120B9B81243BAFF2 /* Pods-SweepApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp.debug.xcconfig"; path = "Target Support Files/Pods-SweepApp/Pods-SweepApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D37DD173EE739BD31C9EE0CE /* Pods-SweepApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp.release.xcconfig"; path = "Target Support Files/Pods-SweepApp/Pods-SweepApp.release.xcconfig"; sourceTree = "<group>"; };
 		FC4E1D9FD46A7626C30F967C /* Pods-SweepApp-SweepAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp-SweepAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SweepApp-SweepAppUITests/Pods-SweepApp-SweepAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,11 +124,9 @@
 		3FA9975A28CB646C00597EFF /* SweepApp */ = {
 			isa = PBXGroup;
 			children = (
-				3FA9975B28CB646C00597EFF /* AppDelegate.swift */,
-				3FA9975D28CB646C00597EFF /* SceneDelegate.swift */,
-				3FA9975F28CB646C00597EFF /* ViewController.swift */,
-				3FA9976128CB646C00597EFF /* Main.storyboard */,
-				3FA9976428CB646F00597EFF /* Assets.xcassets */,
+				85526B5A28CB7F9D00A7C790 /* Resource */,
+				85526B5928CB7F9100A7C790 /* Source */,
+				85526B5828CB7F8800A7C790 /* Application */,
 				3FA9976628CB646F00597EFF /* LaunchScreen.storyboard */,
 				3FA9976928CB646F00597EFF /* Info.plist */,
 			);
@@ -144,6 +150,76 @@
 			path = SweepAppUITests;
 			sourceTree = "<group>";
 		};
+		85526B5828CB7F8800A7C790 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3FA9975D28CB646C00597EFF /* SceneDelegate.swift */,
+				3FA9975B28CB646C00597EFF /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		85526B5928CB7F9100A7C790 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				85526B5B28CB84A100A7C790 /* Views */,
+				85526B5E28CB84B400A7C790 /* Controllers */,
+				85526B5D28CB84AF00A7C790 /* ViewModels */,
+				85526B5C28CB84A900A7C790 /* Models */,
+				85526B5F28CB84C400A7C790 /* Services */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		85526B5A28CB7F9D00A7C790 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				85526B5528CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld */,
+				3FA9976428CB646F00597EFF /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		85526B5B28CB84A100A7C790 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85526B6028CB860E00A7C790 /* View.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		85526B5C28CB84A900A7C790 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85526B6628CB868300A7C790 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		85526B5D28CB84AF00A7C790 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				85526B6228CB863500A7C790 /* ViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		85526B5E28CB84B400A7C790 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3FA9975F28CB646C00597EFF /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		85526B5F28CB84C400A7C790 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				85526B6428CB866700A7C790 /* Service.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		CACDCE153BE977B24A6E8B7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +240,6 @@
 				0782B2A80A44BDB90992B2E8 /* Pods-SweepAppTests.debug.xcconfig */,
 				7676043A4293BD7D2FE2252A /* Pods-SweepAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -179,6 +254,7 @@
 				3FA9975428CB646C00597EFF /* Sources */,
 				3FA9975528CB646C00597EFF /* Frameworks */,
 				3FA9975628CB646C00597EFF /* Resources */,
+				85526B1528CB7A5000A7C790 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -277,7 +353,6 @@
 			files = (
 				3FA9976828CB646F00597EFF /* LaunchScreen.storyboard in Resources */,
 				3FA9976528CB646F00597EFF /* Assets.xcassets in Resources */,
-				3FA9976328CB646C00597EFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +439,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		85526B1528CB7A5000A7C790 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -371,9 +463,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85526B6728CB868300A7C790 /* Task.swift in Sources */,
 				3FA9976028CB646C00597EFF /* ViewController.swift in Sources */,
+				85526B6528CB866700A7C790 /* Service.swift in Sources */,
+				85526B6328CB863500A7C790 /* ViewModel.swift in Sources */,
 				3FA9975C28CB646C00597EFF /* AppDelegate.swift in Sources */,
+				85526B6128CB860E00A7C790 /* View.swift in Sources */,
 				3FA9975E28CB646C00597EFF /* SceneDelegate.swift in Sources */,
+				85526B5728CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,14 +507,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3FA9976128CB646C00597EFF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3FA9976228CB646C00597EFF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3FA9976628CB646F00597EFF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -556,7 +645,6 @@
 				INFOPLIST_FILE = SweepApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -585,7 +673,6 @@
 				INFOPLIST_FILE = SweepApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -721,6 +808,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		85526B5528CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				85526B5628CB7F3700A7C790 /* SweepAppDatabase.xcdatamodel */,
+			);
+			currentVersion = 85526B5628CB7F3700A7C790 /* SweepAppDatabase.xcdatamodel */;
+			path = SweepAppDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3FA9975028CB646C00597EFF /* Project object */;
 }
