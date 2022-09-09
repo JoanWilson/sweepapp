@@ -6,6 +6,7 @@ target 'SweepApp' do
   use_frameworks!
 
   # Pods for SweepApp
+  pod 'SwiftLint'
 
   target 'SweepAppTests' do
     inherit! :search_paths
