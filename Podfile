@@ -1,0 +1,19 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'SweepApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for SweepApp
+
+  target 'SweepAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'SweepAppUITests' do
+    # Pods for testing
+  end
+
+end
