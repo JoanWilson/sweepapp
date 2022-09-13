@@ -7,7 +7,7 @@
 
 import Foundation
 
+final class ViewModel {
 
-class ViewModel {
-    fileprivate let service = Service()
+    fileprivate let service = CoreDataManager()
 }
