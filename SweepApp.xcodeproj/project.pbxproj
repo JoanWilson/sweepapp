@@ -19,10 +19,12 @@
 		3FA9977F28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977E28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift */; };
 		854C723C28CF7230009A9301 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C723B28CF7230009A9301 /* CoreDataManagerTests.swift */; };
 		85526B5728CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85526B5528CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld */; };
-		85526B6128CB860E00A7C790 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6028CB860E00A7C790 /* View.swift */; };
 		85526B6328CB863500A7C790 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6228CB863500A7C790 /* ViewModel.swift */; };
 		85526B6528CB866700A7C790 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6428CB866700A7C790 /* CoreDataManager.swift */; };
 		85526B6728CB868300A7C790 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6628CB868300A7C790 /* Task.swift */; };
+		85ECDCA428D10F0700E5C025 /* TasksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */; };
+		85ECDCA628D10F2700E5C025 /* TaskMoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA528D10F2700E5C025 /* TaskMoc.swift */; };
+		85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA828D10F9300E5C025 /* ViewCoding.swift */; };
 		E52DD3D389139AA478139954 /* Pods_SweepApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 567DA25A29E41546A0BFD403 /* Pods_SweepApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,10 +66,12 @@
 		81D29A45235440DF1E818E77 /* Pods_SweepApp_SweepAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SweepApp_SweepAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		854C723B28CF7230009A9301 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
 		85526B5628CB7F3700A7C790 /* SweepAppDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SweepAppDatabase.xcdatamodel; sourceTree = "<group>"; };
-		85526B6028CB860E00A7C790 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		85526B6228CB863500A7C790 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		85526B6428CB866700A7C790 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		85526B6628CB868300A7C790 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCollectionViewCell.swift; sourceTree = "<group>"; };
+		85ECDCA528D10F2700E5C025 /* TaskMoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMoc.swift; sourceTree = "<group>"; };
+		85ECDCA828D10F9300E5C025 /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
 		AF58D6E0120B9B81243BAFF2 /* Pods-SweepApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp.debug.xcconfig"; path = "Target Support Files/Pods-SweepApp/Pods-SweepApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D37DD173EE739BD31C9EE0CE /* Pods-SweepApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp.release.xcconfig"; path = "Target Support Files/Pods-SweepApp/Pods-SweepApp.release.xcconfig"; sourceTree = "<group>"; };
 		FC4E1D9FD46A7626C30F967C /* Pods-SweepApp-SweepAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp-SweepAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SweepApp-SweepAppUITests/Pods-SweepApp-SweepAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 		85526B5928CB7F9100A7C790 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				85ECDCA728D10F7F00E5C025 /* Protocols */,
 				85526B5B28CB84A100A7C790 /* Views */,
 				85526B5E28CB84B400A7C790 /* Controllers */,
 				85526B5D28CB84AF00A7C790 /* ViewModels */,
@@ -186,7 +191,7 @@
 		85526B5B28CB84A100A7C790 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				85526B6028CB860E00A7C790 /* View.swift */,
+				85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				85526B6628CB868300A7C790 /* Task.swift */,
+				85ECDCA528D10F2700E5C025 /* TaskMoc.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,6 +227,14 @@
 				85526B6428CB866700A7C790 /* CoreDataManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		85ECDCA728D10F7F00E5C025 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				85ECDCA828D10F9300E5C025 /* ViewCoding.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		CACDCE153BE977B24A6E8B7B /* Frameworks */ = {
@@ -468,10 +482,12 @@
 			files = (
 				85526B6728CB868300A7C790 /* Task.swift in Sources */,
 				3FA9976028CB646C00597EFF /* ViewController.swift in Sources */,
+				85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */,
 				85526B6528CB866700A7C790 /* CoreDataManager.swift in Sources */,
+				85ECDCA628D10F2700E5C025 /* TaskMoc.swift in Sources */,
 				85526B6328CB863500A7C790 /* ViewModel.swift in Sources */,
 				3FA9975C28CB646C00597EFF /* AppDelegate.swift in Sources */,
-				85526B6128CB860E00A7C790 /* View.swift in Sources */,
+				85ECDCA428D10F0700E5C025 /* TasksCollectionViewCell.swift in Sources */,
 				3FA9975E28CB646C00597EFF /* SceneDelegate.swift in Sources */,
 				85526B5728CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld in Sources */,
 			);
@@ -644,13 +660,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P8RC3XUL63;
+				DEVELOPMENT_TEAM = F2MBMJ3PK6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SweepApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -672,13 +687,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P8RC3XUL63;
+				DEVELOPMENT_TEAM = F2MBMJ3PK6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SweepApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

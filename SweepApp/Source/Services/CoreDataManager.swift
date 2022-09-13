@@ -77,7 +77,7 @@ final class CoreDataManager {
             print(error)
         }
     }
-    
+
     // TODO: Delete and find "testExample"
     public func deleteATaskByName(name: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {

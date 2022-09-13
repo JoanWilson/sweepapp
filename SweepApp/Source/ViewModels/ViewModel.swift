@@ -10,4 +10,11 @@ import Foundation
 final class ViewModel {
 
     fileprivate let service = CoreDataManager()
+    var mocArray: [TaskMoc] = [
+        TaskMoc(name: "Limpar o quarto", isCompleted: false),
+        TaskMoc(name: "Limpar o quarto", isCompleted: false),
+        TaskMoc(name: "Limpar o quarto", isCompleted: false),
+        TaskMoc(name: "Limpar o quarto", isCompleted: false),
+        TaskMoc(name: "Limpar o quarto", isCompleted: false)
+    ]
 }
