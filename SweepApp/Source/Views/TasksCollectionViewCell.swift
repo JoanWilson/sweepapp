@@ -8,30 +8,61 @@
 import UIKit
 
 class TasksCollectionViewCell: UICollectionViewCell {
+
     static let identifier = "TasksCollectionViewCell"
+
     lazy var taskLabel: UILabel = {
         let label = UILabel()
         label.text = "Task"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.layer.cornerRadius = 12
         return label
     }()
+
+    lazy var imageLogo: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "sword")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(taskLabel)
-        backgroundColor = .systemGray4
-        layer.cornerRadius = 15
-        configConstrains()
+        self.addSubview(imageLogo)
+
+        buildLayout()
     }
-    private func configConstrains() {
-        NSLayoutConstraint.activate([
-            taskLabel.widthAnchor.constraint(equalToConstant: 180),
-            taskLabel.heightAnchor.constraint(equalToConstant: 60),
-            taskLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            taskLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-        ])
-    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension TasksCollectionViewCell: ViewCoding {
+    func setupView() {
+        backgroundColor = .white
+        layer.cornerRadius = 5
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 1
+    }
+
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            imageLogo.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            imageLogo.trailingAnchor.constraint(equalTo: taskLabel.leadingAnchor),
+            imageLogo.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            imageLogo.heightAnchor.constraint(equalToConstant: self.bounds.height*0.7),
+            imageLogo.widthAnchor.constraint(equalToConstant: self.bounds.width*0.2),
+            taskLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            taskLabel.leadingAnchor.constraint(equalTo: imageLogo.trailingAnchor),
+            taskLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+        ])
+    }
+
+    func setupHierarchy() {
+        self.addSubview(taskLabel)
+        self.addSubview(imageLogo)
+    }
+
 }

@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import CoreData
 
-final class ViewModel {
+struct ViewModel {
 
-    fileprivate let service = CoreDataManager()
+    var taskArray: [Task] = []
+    public let service = CoreDataManager()
+
     var mocArray: [TaskMoc] = [
         TaskMoc(name: "Limpar o quarto", isCompleted: false),
         TaskMoc(name: "Limpar o quarto", isCompleted: false),
@@ -17,4 +20,14 @@ final class ViewModel {
         TaskMoc(name: "Limpar o quarto", isCompleted: false),
         TaskMoc(name: "Limpar o quarto", isCompleted: false)
     ]
+
+    init() {
+        setTaskArray()
+    }
+
+    mutating public func setTaskArray() {
+        self.taskArray = self.service.fetchAllTasks()
+        self.taskArray = self.taskArray.reversed()
+    }
+
 }
