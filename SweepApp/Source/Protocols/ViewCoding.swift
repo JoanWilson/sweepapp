@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ViewCoding {
+public protocol ViewCoding {
     func setupView()
     func setupConstraints()
     func setupHierarchy()

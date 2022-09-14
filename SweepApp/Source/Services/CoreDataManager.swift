@@ -11,15 +11,13 @@ import UIKit
 
 final class CoreDataManager {
 
-    var tasks: [NSManagedObject ] = []
-
-    public func fetchAllTasks() -> [NSManagedObject] {
+    public func fetchAllTasks() -> [Task] {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return []
         }
-        var allTasks: [NSManagedObject] = []
+        var allTasks: [Task] = []
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Task")
+        let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
 
         do {
             allTasks = try managedContext.fetch(fetchRequest)
@@ -78,8 +76,7 @@ final class CoreDataManager {
         }
     }
 
-    // TODO: Delete and find "testExample"
-    public func deleteATaskByName(name: String) {
+    public func deleteATaskByName(name: String?) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -97,6 +94,35 @@ final class CoreDataManager {
             } catch {
                 print(error)
             }
+        }
+    }
+
+    public func deleteAllTasks() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Task")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try managedContext.execute(deleteRequest)
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+
+    public func deleteATask(_ task: Task) {
+        guard let appDelete = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelete.persistentContainer.viewContext
+        managedContext.delete(task)
+
+        do {
+            try managedContext.save()
+        } catch {
+            print(error)
         }
     }
 
