@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TasksCollectionViewCell: UICollectionViewCell {
+final class TasksCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "TasksCollectionViewCell"
 
@@ -28,8 +28,6 @@ class TasksCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubview(taskLabel)
-        self.addSubview(imageLogo)
 
         buildLayout()
     }
