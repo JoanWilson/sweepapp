@@ -675,6 +675,7 @@
 				DEVELOPMENT_TEAM = F2MBMJ3PK6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SweepApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskZ;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -702,6 +703,7 @@
 				DEVELOPMENT_TEAM = F2MBMJ3PK6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SweepApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskZ;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

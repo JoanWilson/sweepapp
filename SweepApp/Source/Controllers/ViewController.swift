@@ -235,9 +235,9 @@ extension ViewController {
         let breathingNames = ["RES1","RES2","RES3","RES4"]
         var breathingImages = [UIImage]()
         
-        for i in 0..<breathingNames.count{
+        for index in 0..<breathingNames.count{
             
-            breathingImages.append(UIImage(named: breathingNames[i])!)
+            breathingImages.append(UIImage(named: breathingNames[index])!)
         }
         self.marcoCharacter.animationImages = breathingImages
         self.marcoCharacter.animationDuration = 1
