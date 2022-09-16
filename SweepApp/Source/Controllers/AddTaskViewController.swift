@@ -31,16 +31,18 @@ final class AddTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buildLayout()
-        view.backgroundColor = .clear
+        getKeyboardRecognition()
 
     }
 
     func cancelView() {
         self.dismiss(animated: true)
     }
-//    focuas teclado
-//    teclado h
-//    hellowords branch animation moysesaz
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 
 }
 
@@ -70,4 +72,39 @@ extension AddTaskViewController: ViewCoding {
             view.backgroundColor = .clear
         }
     }
+}
+
+extension AddTaskViewController {
+    private func getKeyboardRecognition() {
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+
+    @objc private func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardHeight = keyboardFrame.cgRectValue.height
+            let bottomSpace = self.view.frame.height - (windowAddTask.frame.origin.y + windowAddTask.frame.height)
+            self.view.frame.origin.y -= keyboardHeight - bottomSpace + 10
+        }
+    }
+
+    @objc private func keyboardWillHide() {
+        self.view.frame.origin.y = 0
+    }
+
 }
