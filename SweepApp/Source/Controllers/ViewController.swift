@@ -11,7 +11,7 @@ import CoreData
 final class ViewController: UIViewController {
     
     fileprivate var viewModel = ViewModel() {
-        didSet { // property observer
+        didSet {
             viewModel.setTaskArray()
             tasksCollectionView.reloadData()
         }
@@ -107,15 +107,21 @@ final class ViewController: UIViewController {
     @objc private func showAddTaskView() {
         let addTaskViewController = AddTaskViewController()
         addTaskViewController.modalPresentationStyle = .overFullScreen
+        addTaskViewController.windowAddTask.delegate = self
         self.present(addTaskViewController, animated: false)
-//        viewModel.service.addATask(for: "TesteAgora")
-//        viewModel.setTaskArray()
     }
     
     @objc private func showHistoryView() {
         print("Mostrar historico")
     }
-    
+
+}
+
+extension ViewController: AddTaskWindowDelegate {
+    func addANewTask(nameTask: String) {
+        viewModel.service.addATask(for: nameTask)
+        viewModel.setTaskArray()
+    }
 }
 
 extension ViewController: ViewCoding {
@@ -204,7 +210,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         ) as? TasksCollectionViewCell else {
             return UICollectionViewCell()
 
-            
         }
         
         cell.taskLabel.text = viewModel.taskArray[indexPath.row].name

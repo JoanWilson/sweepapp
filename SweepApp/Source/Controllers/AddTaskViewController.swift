@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddTaskViewController: UIViewController {
+final class AddTaskViewController: UIViewController {
 
     fileprivate lazy var blurEffectBackground: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
@@ -18,12 +18,13 @@ class AddTaskViewController: UIViewController {
         return blurEffectView
     }()
 
-    fileprivate lazy var windowAddTask: AddTaskWindowView = {
-        let windowAddTask = AddTaskWindowView()
+    public lazy var windowAddTask: AddTaskWindowView = {
+        let windowAddTask = AddTaskWindowView(frame: .zero) {
+            self.dismiss(animated: false)
+        }
         windowAddTask.translatesAutoresizingMaskIntoConstraints = false
         windowAddTask.backgroundColor = UIColor(named: "window-color")
         windowAddTask.layer.cornerRadius = 10
-
         return windowAddTask
     }()
 
@@ -31,7 +32,15 @@ class AddTaskViewController: UIViewController {
         super.viewDidLoad()
         buildLayout()
         view.backgroundColor = .clear
+
     }
+
+    func cancelView() {
+        self.dismiss(animated: true)
+    }
+//    focuas teclado
+//    teclado h
+//    hellowords branch animation moysesaz
 
 }
 

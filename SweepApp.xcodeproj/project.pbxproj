@@ -12,7 +12,6 @@
 		3FA9975C28CB646C00597EFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9975B28CB646C00597EFF /* AppDelegate.swift */; };
 		3FA9975E28CB646C00597EFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9975D28CB646C00597EFF /* SceneDelegate.swift */; };
 		3FA9976028CB646C00597EFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9975F28CB646C00597EFF /* ViewController.swift */; };
-		3FA9976528CB646F00597EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA9976428CB646F00597EFF /* Assets.xcassets */; };
 		3FA9976828CB646F00597EFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA9976628CB646F00597EFF /* LaunchScreen.storyboard */; };
 		3FA9977328CB646F00597EFF /* SweepAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977228CB646F00597EFF /* SweepAppTests.swift */; };
 		3FA9977D28CB646F00597EFF /* SweepAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977C28CB646F00597EFF /* SweepAppUITests.swift */; };
@@ -27,6 +26,8 @@
 		85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA828D10F9300E5C025 /* ViewCoding.swift */; };
 		85ECDCAB28D269AB00E5C025 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCAA28D269AB00E5C025 /* AddTaskViewController.swift */; };
 		85ECDCEA28D29CE400E5C025 /* AddTaskWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCE928D29CE400E5C025 /* AddTaskWindowView.swift */; };
+		85ECDCEC28D3644500E5C025 /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCEB28D3644500E5C025 /* TextFieldWithPadding.swift */; };
+		85ECDCEE28D3664800E5C025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85ECDCED28D3664800E5C025 /* Assets.xcassets */; };
 		E52DD3D389139AA478139954 /* Pods_SweepApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 567DA25A29E41546A0BFD403 /* Pods_SweepApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +56,6 @@
 		3FA9975B28CB646C00597EFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FA9975D28CB646C00597EFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3FA9975F28CB646C00597EFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3FA9976428CB646F00597EFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FA9976728CB646F00597EFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FA9976928CB646F00597EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FA9976E28CB646F00597EFF /* SweepAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SweepAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +76,8 @@
 		85ECDCA828D10F9300E5C025 /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
 		85ECDCAA28D269AB00E5C025 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		85ECDCE928D29CE400E5C025 /* AddTaskWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskWindowView.swift; sourceTree = "<group>"; };
+		85ECDCEB28D3644500E5C025 /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
+		85ECDCED28D3664800E5C025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF58D6E0120B9B81243BAFF2 /* Pods-SweepApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp.debug.xcconfig"; path = "Target Support Files/Pods-SweepApp/Pods-SweepApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D37DD173EE739BD31C9EE0CE /* Pods-SweepApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp.release.xcconfig"; path = "Target Support Files/Pods-SweepApp/Pods-SweepApp.release.xcconfig"; sourceTree = "<group>"; };
 		FC4E1D9FD46A7626C30F967C /* Pods-SweepApp-SweepAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp-SweepAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SweepApp-SweepAppUITests/Pods-SweepApp-SweepAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				85526B5528CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld */,
-				3FA9976428CB646F00597EFF /* Assets.xcassets */,
+				85ECDCED28D3664800E5C025 /* Assets.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -197,6 +199,7 @@
 			children = (
 				85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */,
 				85ECDCE928D29CE400E5C025 /* AddTaskWindowView.swift */,
+				85ECDCEB28D3644500E5C025 /* TextFieldWithPadding.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,8 +377,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85ECDCEE28D3664800E5C025 /* Assets.xcassets in Resources */,
 				3FA9976828CB646F00597EFF /* LaunchScreen.storyboard in Resources */,
-				3FA9976528CB646F00597EFF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +493,7 @@
 				3FA9976028CB646C00597EFF /* ViewController.swift in Sources */,
 				85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */,
 				85526B6528CB866700A7C790 /* CoreDataManager.swift in Sources */,
+				85ECDCEC28D3644500E5C025 /* TextFieldWithPadding.swift in Sources */,
 				85ECDCA628D10F2700E5C025 /* TaskMoc.swift in Sources */,
 				85526B6328CB863500A7C790 /* ViewModel.swift in Sources */,
 				85ECDCEA28D29CE400E5C025 /* AddTaskWindowView.swift in Sources */,
