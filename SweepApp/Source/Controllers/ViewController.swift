@@ -19,9 +19,8 @@ final class ViewController: UIViewController {
     
     fileprivate lazy var marcoCharacter: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "marco")
-        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
         
         return imageView
     }()
@@ -29,7 +28,7 @@ final class ViewController: UIViewController {
     fileprivate lazy var zombieCharacter: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "zombie")
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         return imageView
@@ -132,6 +131,9 @@ extension ViewController: ViewCoding {
             TasksCollectionViewCell.self,
             forCellWithReuseIdentifier: TasksCollectionViewCell.identifier
         )
+        
+        self.breathingAnimation()
+        
     }
     
     func setupConstraints() {
@@ -167,28 +169,28 @@ extension ViewController: ViewCoding {
             historyButton.heightAnchor.constraint(equalToConstant: view.bounds.height*0.1),
             historyButton.widthAnchor.constraint(equalToConstant: view.bounds.height*0.1),
             
-            marcoCharacter.heightAnchor.constraint(equalToConstant: 124),
-            marcoCharacter.widthAnchor.constraint(equalToConstant: 139),
-            marcoCharacter.bottomAnchor.constraint(equalTo: imageCollectionViewBackground.topAnchor),
+            marcoCharacter.heightAnchor.constraint(equalToConstant: 424),
+            marcoCharacter.widthAnchor.constraint(equalToConstant: 439),
+            marcoCharacter.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.bounds.height*0.05),
             marcoCharacter.leadingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.leadingAnchor,
-                constant: view.bounds.width*0.3
+                constant: view.bounds.width*0.13
             ),
             
             zombieCharacter.heightAnchor.constraint(equalToConstant: 106),
             zombieCharacter.widthAnchor.constraint(equalToConstant: 125),
-            zombieCharacter.bottomAnchor.constraint(equalTo: imageCollectionViewBackground.topAnchor),
-            zombieCharacter.leadingAnchor.constraint(equalTo: marcoCharacter.trailingAnchor)
+            zombieCharacter.bottomAnchor.constraint(equalTo: imageCollectionViewBackground.topAnchor, constant: -view.bounds.height*0.03),
+            zombieCharacter.leadingAnchor.constraint(equalTo: marcoCharacter.centerXAnchor, constant: view.bounds.width*0.1)
         ])
     }
     
     func setupHierarchy() {
         view.addSubview(imageBackground)
         view.addSubview(imageCollectionViewBackground)
+        view.addSubview(marcoCharacter)
         view.addSubview(tasksCollectionView)
         view.addSubview(addButton)
         view.addSubview(historyButton)
-        view.addSubview(marcoCharacter)
         view.addSubview(zombieCharacter)
     }
     
@@ -221,6 +223,26 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = viewModel.taskArray[indexPath.row]
         viewModel.service.deleteATask(cell)
         viewModel.setTaskArray()
+    }
+    
+}
+
+// MARK: - Characters Animations
+extension ViewController {
+    
+    private func breathingAnimation() {
+        
+        let breathingNames = ["RES1","RES2","RES3","RES4"]
+        var breathingImages = [UIImage]()
+        
+        for i in 0..<breathingNames.count{
+            
+            breathingImages.append(UIImage(named: breathingNames[i])!)
+        }
+        self.marcoCharacter.animationImages = breathingImages
+        self.marcoCharacter.animationDuration = 1
+        self.marcoCharacter.startAnimating()
+        
     }
     
 }
