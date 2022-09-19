@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D516133C817255905FA4E4D /* Pods_SweepAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD8A595C3657F11A785A39C /* Pods_SweepAppTests.framework */; };
 		10039EF764C1880CDE304AFE /* Pods_SweepApp_SweepAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D29A45235440DF1E818E77 /* Pods_SweepApp_SweepAppUITests.framework */; };
+		3F7FCC4D28D8961E00A5517F /* ViewController+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7FCC4C28D8961E00A5517F /* ViewController+Animations.swift */; };
 		3FA9975C28CB646C00597EFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9975B28CB646C00597EFF /* AppDelegate.swift */; };
 		3FA9975E28CB646C00597EFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9975D28CB646C00597EFF /* SceneDelegate.swift */; };
 		3FA9976028CB646C00597EFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9975F28CB646C00597EFF /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 		0782B2A80A44BDB90992B2E8 /* Pods-SweepAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SweepAppTests/Pods-SweepAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0FD8A595C3657F11A785A39C /* Pods_SweepAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SweepAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2906FF8D5151548574DEAFDF /* Pods-SweepApp-SweepAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp-SweepAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-SweepApp-SweepAppUITests/Pods-SweepApp-SweepAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3F7FCC4C28D8961E00A5517F /* ViewController+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Animations.swift"; sourceTree = "<group>"; };
 		3FA9975828CB646C00597EFF /* SweepApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SweepApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA9975B28CB646C00597EFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FA9975D28CB646C00597EFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F7FCC4B28D895FB00A5517F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3FA9975F28CB646C00597EFF /* ViewController.swift */,
+				3F7FCC4C28D8961E00A5517F /* ViewController+Animations.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		3FA9974F28CB646C00597EFF = {
 			isa = PBXGroup;
 			children = (
@@ -224,7 +235,7 @@
 		85526B5E28CB84B400A7C790 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3FA9975F28CB646C00597EFF /* ViewController.swift */,
+				3F7FCC4B28D895FB00A5517F /* ViewController */,
 				85ECDCAA28D269AB00E5C025 /* AddTaskViewController.swift */,
 			);
 			path = Controllers;
@@ -502,6 +513,7 @@
 				85ECDCA428D10F0700E5C025 /* TasksCollectionViewCell.swift in Sources */,
 				3FA9975E28CB646C00597EFF /* SceneDelegate.swift in Sources */,
 				85526B5728CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld in Sources */,
+				3F7FCC4D28D8961E00A5517F /* ViewController+Animations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
