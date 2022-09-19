@@ -110,7 +110,6 @@ final class AddTaskWindowView: UIView {
 
 }
 
-
 extension AddTaskWindowView: ViewCoding {
     func setupView() {
     }

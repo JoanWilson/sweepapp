@@ -17,7 +17,7 @@ final class ViewController: UIViewController {
         }
     }
     
-    fileprivate lazy var marcoCharacter: UIImageView = {
+    public lazy var marcoCharacter: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -25,9 +25,8 @@ final class ViewController: UIViewController {
         return imageView
     }()
     
-    fileprivate lazy var zombieCharacter: UIImageView = {
+    public lazy var zombieCharacter: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "zombie")
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -113,7 +112,7 @@ final class ViewController: UIViewController {
     @objc private func showHistoryView() {
         print("Mostrar historico")
     }
-
+    
 }
 
 extension ViewController: AddTaskWindowDelegate {
@@ -132,8 +131,8 @@ extension ViewController: ViewCoding {
             forCellWithReuseIdentifier: TasksCollectionViewCell.identifier
         )
         
-        self.breathingAnimation()
-        
+        self.startAnimations()
+
     }
     
     func setupConstraints() {
@@ -179,8 +178,14 @@ extension ViewController: ViewCoding {
             
             zombieCharacter.heightAnchor.constraint(equalToConstant: 106),
             zombieCharacter.widthAnchor.constraint(equalToConstant: 125),
-            zombieCharacter.bottomAnchor.constraint(equalTo: imageCollectionViewBackground.topAnchor, constant: -view.bounds.height*0.03),
-            zombieCharacter.leadingAnchor.constraint(equalTo: marcoCharacter.centerXAnchor, constant: view.bounds.width*0.1)
+            zombieCharacter.bottomAnchor.constraint(
+                equalTo: imageCollectionViewBackground.topAnchor,
+                constant: -view.bounds.height*0.03
+            ),
+            zombieCharacter.leadingAnchor.constraint(
+                equalTo: marcoCharacter.centerXAnchor,
+                constant: view.bounds.width*0.1
+            )
         ])
     }
     
@@ -211,7 +216,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             for: indexPath
         ) as? TasksCollectionViewCell else {
             return UICollectionViewCell()
-
+            
         }
         
         cell.taskLabel.text = viewModel.taskArray[indexPath.row].name
@@ -223,26 +228,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = viewModel.taskArray[indexPath.row]
         viewModel.service.deleteATask(cell)
         viewModel.setTaskArray()
-    }
-    
-}
-
-// MARK: - Characters Animations
-extension ViewController {
-    
-    private func breathingAnimation() {
-        
-        let breathingNames = ["RES1","RES2","RES3","RES4"]
-        var breathingImages = [UIImage]()
-        
-        for index in 0..<breathingNames.count{
-            
-            breathingImages.append(UIImage(named: breathingNames[index])!)
-        }
-        self.marcoCharacter.animationImages = breathingImages
-        self.marcoCharacter.animationDuration = 1
-        self.marcoCharacter.startAnimating()
-        
     }
     
 }
