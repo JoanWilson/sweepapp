@@ -25,6 +25,14 @@ final class ViewController: UIViewController {
         return imageView
     }()
     
+    public lazy var attackAnimation: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        
+        return imageView
+    }()
+    
     public lazy var zombieCharacter: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -113,6 +121,7 @@ final class ViewController: UIViewController {
         print("Mostrar historico")
     }
     
+    
 }
 
 extension ViewController: AddTaskWindowDelegate {
@@ -168,23 +177,31 @@ extension ViewController: ViewCoding {
             historyButton.heightAnchor.constraint(equalToConstant: view.bounds.height*0.1),
             historyButton.widthAnchor.constraint(equalToConstant: view.bounds.height*0.1),
             
-            marcoCharacter.heightAnchor.constraint(equalToConstant: 424),
-            marcoCharacter.widthAnchor.constraint(equalToConstant: 439),
-            marcoCharacter.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.bounds.height*0.05),
+            marcoCharacter.heightAnchor.constraint(equalToConstant: 440),
+            marcoCharacter.widthAnchor.constraint(equalToConstant: 216),
+            marcoCharacter.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.bounds.height*0.08),
             marcoCharacter.leadingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.leadingAnchor,
-                constant: view.bounds.width*0.13
+                constant: view.bounds.width*0.28
             ),
             
-            zombieCharacter.heightAnchor.constraint(equalToConstant: 106),
-            zombieCharacter.widthAnchor.constraint(equalToConstant: 125),
+            attackAnimation.heightAnchor.constraint(equalToConstant: 440),
+            attackAnimation.widthAnchor.constraint(equalToConstant: 216),
+            attackAnimation.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.bounds.height*0.08),
+            attackAnimation.leadingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.leadingAnchor,
+                constant: view.bounds.width*0.28
+            ),
+            
+            zombieCharacter.heightAnchor.constraint(equalToConstant: 105),
+            zombieCharacter.widthAnchor.constraint(equalToConstant: 60),
             zombieCharacter.bottomAnchor.constraint(
                 equalTo: imageCollectionViewBackground.topAnchor,
-                constant: -view.bounds.height*0.03
+                constant: view.bounds.height*0.01
             ),
             zombieCharacter.leadingAnchor.constraint(
                 equalTo: marcoCharacter.centerXAnchor,
-                constant: view.bounds.width*0.1
+                constant: view.bounds.width*0.08
             )
         ])
     }
@@ -192,11 +209,12 @@ extension ViewController: ViewCoding {
     func setupHierarchy() {
         view.addSubview(imageBackground)
         view.addSubview(imageCollectionViewBackground)
+        view.addSubview(zombieCharacter)
         view.addSubview(marcoCharacter)
+        view.addSubview(attackAnimation)
         view.addSubview(tasksCollectionView)
         view.addSubview(addButton)
         view.addSubview(historyButton)
-        view.addSubview(zombieCharacter)
     }
     
 }
@@ -225,9 +243,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let cell = viewModel.taskArray[indexPath.row]
         viewModel.service.deleteATask(cell)
         viewModel.setTaskArray()
+        doAnimate()
     }
     
 }
