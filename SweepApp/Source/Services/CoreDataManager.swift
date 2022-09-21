@@ -55,9 +55,12 @@ final class CoreDataManager {
         }
 
         let managedContext = appDelegate.persistentContainer.viewContext
-        var updatedObject = managedContext.object(with: task.objectID)
-
-        updatedObject.setValue(true, forKey: "isCompleted")
+        task.setValue(true, forKey: "isCompleted")
+//        var updatedObject = managedContext.object(with: task.objectID)
+//
+//        print(updatedObject)
+//
+//        updatedObject.setValue(true, forKey: "isCompleted")
 
         do {
             try managedContext.save()

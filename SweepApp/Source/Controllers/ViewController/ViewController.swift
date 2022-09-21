@@ -12,7 +12,6 @@ final class ViewController: UIViewController {
     
     fileprivate var viewModel = ViewModel() {
         didSet {
-            viewModel.setTaskArray()
             tasksCollectionView.reloadData()
         }
     }
@@ -223,15 +222,8 @@ extension ViewController: ViewCoding {
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var count = 0
 
-        for index in 0..<viewModel.taskArray.count {
-            if !viewModel.taskArray[index].isCompleted {
-                count += 1
-            }
-        }
-
-        return count
+        return viewModel.getUncompletedArray().count
     }
     
     public func collectionView(
@@ -247,21 +239,21 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             
         }
 
-        if !viewModel.taskArray[indexPath.row].isCompleted {
-
-            cell.taskLabel.text = viewModel.taskArray[indexPath.row].name
-        }
+            cell.taskLabel.text = viewModel.getUncompletedArray()[indexPath.row].name
 
         return cell
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        viewModel.taskArray[indexPath.row].isCompleted = true
-        let task = viewModel.taskArray[indexPath.row]
-        viewModel.service.completeATask(task)
-        viewModel.setTaskArray()
-        doAnimate()
+
+        DispatchQueue.main.async {
+            let task = self.viewModel.getUncompletedArray()[indexPath.row]
+            self.viewModel.service.completeATask(task)
+            self.viewModel.setTaskArray()
+            self.doAnimate()
+            print(indexPath)
+        }
+
     }
     
 }

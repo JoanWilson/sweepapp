@@ -190,6 +190,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8529297428DB496900392D41 /* InitialViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InitialViewController;
+			sourceTree = "<group>";
+		};
 		85526B5828CB7F8800A7C790 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +261,7 @@
 		85526B5E28CB84B400A7C790 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8529297428DB496900392D41 /* InitialViewController */,
 				85ECDCF328D8A1A300E5C025 /* HistoryViewController */,
 				3F7FCC4B28D895FB00A5517F /* ViewController */,
 				85ECDCAA28D269AB00E5C025 /* AddTaskViewController.swift */,

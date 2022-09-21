@@ -11,6 +11,7 @@ import CoreData
 struct ViewModel {
 
     var taskArray: [Task] = []
+
     public let service = CoreDataManager()
 
     var mocArray: [TaskMoc] = [
@@ -28,6 +29,30 @@ struct ViewModel {
     mutating public func setTaskArray() {
         self.taskArray = self.service.fetchAllTasks()
         self.taskArray = self.taskArray.reversed()
+    }
+
+    public func getCompletedArray() -> [Task] {
+        var array: [Task] = []
+
+        for index in taskArray {
+            if index.isCompleted == true {
+                array.append(index)
+            }
+        }
+
+        return array
+    }
+
+    public func getUncompletedArray() -> [Task] {
+        var array: [Task] = []
+
+        for index in taskArray {
+            if index.isCompleted == false {
+                array.append(index)
+            }
+        }
+
+        return array
     }
 
 }
