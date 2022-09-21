@@ -118,8 +118,8 @@ extension HistoryWindowView: UICollectionViewDelegate, UICollectionViewDataSourc
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var count = 0
 
-        for index in 0..<viewModel.mocArray.count {
-            if viewModel.mocArray[index].isCompleted == true {
+        for index in 0..<viewModel.taskArray.count {
+            if viewModel.taskArray[index].isCompleted == true {
                 count += 1
             }
         }
@@ -139,8 +139,8 @@ extension HistoryWindowView: UICollectionViewDelegate, UICollectionViewDataSourc
             return UICollectionViewCell()
         }
 
-        if viewModel.mocArray[indexPath.row].isCompleted == true {
-            cell.taskLabel.text = viewModel.mocArray[indexPath.row].name
+        if viewModel.taskArray[indexPath.row].isCompleted == true {
+            cell.taskLabel.text = viewModel.taskArray[indexPath.row].name
         }
 
         return cell
