@@ -17,6 +17,7 @@
 		3FA9977328CB646F00597EFF /* SweepAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977228CB646F00597EFF /* SweepAppTests.swift */; };
 		3FA9977D28CB646F00597EFF /* SweepAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977C28CB646F00597EFF /* SweepAppUITests.swift */; };
 		3FA9977F28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977E28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift */; };
+		8529297328DB2E9800392D41 /* UIView+AddBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8529297228DB2E9800392D41 /* UIView+AddBorders.swift */; };
 		854C723C28CF7230009A9301 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C723B28CF7230009A9301 /* CoreDataManagerTests.swift */; };
 		85526B5728CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85526B5528CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld */; };
 		85526B6328CB863500A7C790 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6228CB863500A7C790 /* ViewModel.swift */; };
@@ -29,6 +30,9 @@
 		85ECDCEA28D29CE400E5C025 /* AddTaskWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCE928D29CE400E5C025 /* AddTaskWindowView.swift */; };
 		85ECDCEC28D3644500E5C025 /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCEB28D3644500E5C025 /* TextFieldWithPadding.swift */; };
 		85ECDCEE28D3664800E5C025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85ECDCED28D3664800E5C025 /* Assets.xcassets */; };
+		85ECDCF528D8A1B800E5C025 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCF428D8A1B800E5C025 /* HistoryViewController.swift */; };
+		85ECDCF728D8A8E800E5C025 /* HistoryWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCF628D8A8E800E5C025 /* HistoryWindowView.swift */; };
+		85ECDCF928D9DDB300E5C025 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCF828D9DDB300E5C025 /* HistoryCollectionViewCell.swift */; };
 		E52DD3D389139AA478139954 /* Pods_SweepApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 567DA25A29E41546A0BFD403 /* Pods_SweepApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +72,7 @@
 		567DA25A29E41546A0BFD403 /* Pods_SweepApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SweepApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7676043A4293BD7D2FE2252A /* Pods-SweepAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepAppTests.release.xcconfig"; path = "Target Support Files/Pods-SweepAppTests/Pods-SweepAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		81D29A45235440DF1E818E77 /* Pods_SweepApp_SweepAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SweepApp_SweepAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8529297228DB2E9800392D41 /* UIView+AddBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddBorders.swift"; sourceTree = "<group>"; };
 		854C723B28CF7230009A9301 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
 		85526B5628CB7F3700A7C790 /* SweepAppDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SweepAppDatabase.xcdatamodel; sourceTree = "<group>"; };
 		85526B6228CB863500A7C790 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -80,6 +85,9 @@
 		85ECDCE928D29CE400E5C025 /* AddTaskWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskWindowView.swift; sourceTree = "<group>"; };
 		85ECDCEB28D3644500E5C025 /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
 		85ECDCED28D3664800E5C025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85ECDCF428D8A1B800E5C025 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		85ECDCF628D8A8E800E5C025 /* HistoryWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWindowView.swift; sourceTree = "<group>"; };
+		85ECDCF828D9DDB300E5C025 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF58D6E0120B9B81243BAFF2 /* Pods-SweepApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp.debug.xcconfig"; path = "Target Support Files/Pods-SweepApp/Pods-SweepApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D37DD173EE739BD31C9EE0CE /* Pods-SweepApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp.release.xcconfig"; path = "Target Support Files/Pods-SweepApp/Pods-SweepApp.release.xcconfig"; sourceTree = "<group>"; };
 		FC4E1D9FD46A7626C30F967C /* Pods-SweepApp-SweepAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepApp-SweepAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SweepApp-SweepAppUITests/Pods-SweepApp-SweepAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +182,14 @@
 			path = SweepAppUITests;
 			sourceTree = "<group>";
 		};
+		8529297128DB2E7D00392D41 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8529297228DB2E9800392D41 /* UIView+AddBorders.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		85526B5828CB7F8800A7C790 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +202,7 @@
 		85526B5928CB7F9100A7C790 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				8529297128DB2E7D00392D41 /* Extensions */,
 				85ECDCA728D10F7F00E5C025 /* Protocols */,
 				85526B5B28CB84A100A7C790 /* Views */,
 				85526B5E28CB84B400A7C790 /* Controllers */,
@@ -211,6 +228,8 @@
 				85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */,
 				85ECDCE928D29CE400E5C025 /* AddTaskWindowView.swift */,
 				85ECDCEB28D3644500E5C025 /* TextFieldWithPadding.swift */,
+				85ECDCF628D8A8E800E5C025 /* HistoryWindowView.swift */,
+				85ECDCF828D9DDB300E5C025 /* HistoryCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +254,7 @@
 		85526B5E28CB84B400A7C790 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				85ECDCF328D8A1A300E5C025 /* HistoryViewController */,
 				3F7FCC4B28D895FB00A5517F /* ViewController */,
 				85ECDCAA28D269AB00E5C025 /* AddTaskViewController.swift */,
 			);
@@ -255,6 +275,14 @@
 				85ECDCA828D10F9300E5C025 /* ViewCoding.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		85ECDCF328D8A1A300E5C025 /* HistoryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				85ECDCF428D8A1B800E5C025 /* HistoryViewController.swift */,
+			);
+			path = HistoryViewController;
 			sourceTree = "<group>";
 		};
 		CACDCE153BE977B24A6E8B7B /* Frameworks */ = {
@@ -503,13 +531,17 @@
 				85526B6728CB868300A7C790 /* Task.swift in Sources */,
 				3FA9976028CB646C00597EFF /* ViewController.swift in Sources */,
 				85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */,
+				85ECDCF528D8A1B800E5C025 /* HistoryViewController.swift in Sources */,
 				85526B6528CB866700A7C790 /* CoreDataManager.swift in Sources */,
 				85ECDCEC28D3644500E5C025 /* TextFieldWithPadding.swift in Sources */,
 				85ECDCA628D10F2700E5C025 /* TaskMoc.swift in Sources */,
+				85ECDCF728D8A8E800E5C025 /* HistoryWindowView.swift in Sources */,
 				85526B6328CB863500A7C790 /* ViewModel.swift in Sources */,
 				85ECDCEA28D29CE400E5C025 /* AddTaskWindowView.swift in Sources */,
 				85ECDCAB28D269AB00E5C025 /* AddTaskViewController.swift in Sources */,
 				3FA9975C28CB646C00597EFF /* AppDelegate.swift in Sources */,
+				8529297328DB2E9800392D41 /* UIView+AddBorders.swift in Sources */,
+				85ECDCF928D9DDB300E5C025 /* HistoryCollectionViewCell.swift in Sources */,
 				85ECDCA428D10F0700E5C025 /* TasksCollectionViewCell.swift in Sources */,
 				3FA9975E28CB646C00597EFF /* SceneDelegate.swift in Sources */,
 				85526B5728CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld in Sources */,
