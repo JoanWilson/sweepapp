@@ -118,7 +118,9 @@ final class ViewController: UIViewController {
     }
     
     @objc private func showHistoryView() {
-        print("Mostrar historico")
+        let historyViewController = HistoryViewController()
+        historyViewController.modalPresentationStyle = .overFullScreen
+        self.present(historyViewController, animated: false)
     }
     
     
@@ -220,11 +222,19 @@ extension ViewController: ViewCoding {
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.taskArray.count
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        var count = 0
+
+        for index in 0..<viewModel.taskArray.count {
+            if !viewModel.taskArray[index].isCompleted {
+                count += 1
+            }
+        }
+
+        return count
     }
     
-    func collectionView(
+    public func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
@@ -236,16 +246,20 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             return UICollectionViewCell()
             
         }
-        
-        cell.taskLabel.text = viewModel.taskArray[indexPath.row].name
-        
+
+        if !viewModel.taskArray[indexPath.row].isCompleted {
+
+            cell.taskLabel.text = viewModel.taskArray[indexPath.row].name
+        }
+
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let cell = viewModel.taskArray[indexPath.row]
-        viewModel.service.deleteATask(cell)
+        viewModel.taskArray[indexPath.row].isCompleted = true
+        let task = viewModel.taskArray[indexPath.row]
+        viewModel.service.completeATask(task)
         viewModel.setTaskArray()
         doAnimate()
     }

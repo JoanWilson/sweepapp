@@ -49,31 +49,22 @@ final class CoreDataManager {
         }
     }
 
-    public func updateATask() {
+    public func completeATask(_ task: Task) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        let task: Task!
 
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchTask: NSFetchRequest<Task> = Task.fetchRequest()
-        fetchTask.predicate = NSPredicate(format: "name = %@", "teste" as String)
+        var updatedObject = managedContext.object(with: task.objectID)
 
-        let results = try? managedContext.fetch(fetchTask)
-
-        if results?.count == 0 {
-            task = Task(context: managedContext)
-        } else {
-            task = results?.first
-        }
-
-        task.isCompleted = true
+        updatedObject.setValue(true, forKey: "isCompleted")
 
         do {
             try managedContext.save()
         } catch {
             print(error)
         }
+
     }
 
     public func deleteATaskByName(name: String?) {
