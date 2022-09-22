@@ -19,8 +19,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = UINavigationController(rootViewController: ViewController())
-        window?.makeKeyAndVisible()
+
+        let alreadyLaunched = UserDefaults.standard.bool(forKey: "AppLauch")
+
+        if !alreadyLaunched {
+            window?.rootViewController = UINavigationController(rootViewController: InitialViewController())
+            window?.makeKeyAndVisible()
+            UserDefaults.standard.set(true, forKey: "AppLauch")
+            UserDefaults.standard.synchronize()
+        } else {
+            window?.rootViewController = UINavigationController(rootViewController: ViewController())
+            window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
