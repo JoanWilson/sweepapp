@@ -32,7 +32,6 @@ extension UIView {
             return border
         }
 
-
         if edges.contains(.top) || edges.contains(.all) {
             addBorder(formats: "V:|-0-[border(==thickness)]", "H:|-inset-[border]-inset-|")
         }

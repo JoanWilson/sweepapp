@@ -109,19 +109,20 @@ final class ViewController: UIViewController {
         buildLayout()
     }
     
-    @objc private func showAddTaskView() {
+    @objc public func showAddTaskView() {
         let addTaskViewController = AddTaskViewController()
         addTaskViewController.modalPresentationStyle = .overFullScreen
         addTaskViewController.windowAddTask.delegate = self
-        self.present(addTaskViewController, animated: false)
+        addTaskViewController.modalTransitionStyle = .crossDissolve
+        self.present(addTaskViewController, animated: true)
     }
     
     @objc private func showHistoryView() {
         let historyViewController = HistoryViewController()
         historyViewController.modalPresentationStyle = .overFullScreen
-        self.present(historyViewController, animated: false)
+        historyViewController.modalTransitionStyle = .crossDissolve
+        self.present(historyViewController, animated: true)
     }
-    
     
 }
 
