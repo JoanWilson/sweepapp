@@ -56,6 +56,11 @@ final class AddTaskWindowView: UIView {
         textField.keyboardType = .alphabet
         textField.autocorrectionType = .yes
         textField.backgroundColor = .white
+        textField.textColor = .black
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "Digite uma tarefa, ex: Limpar a casa, Estudar e etc.",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray.cgColor]
+        )
         textField.layer.cornerRadius = 5
         textField.translatesAutoresizingMaskIntoConstraints = false
 

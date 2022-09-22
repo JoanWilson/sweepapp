@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 
+
 final class ViewController: UIViewController {
     
     fileprivate var viewModel = ViewModel() {
@@ -39,9 +40,37 @@ final class ViewController: UIViewController {
         
         return imageView
     }()
+
+    fileprivate lazy var licenseButton: UIButton = {
+        let button = UIButton(type: .custom)
+        let imageConfiguration = UIImage.SymbolConfiguration(
+            pointSize: view.bounds.height*0.05,
+            weight: .bold,
+            scale: .large
+        )
+        let image = UIImage(systemName: "info.circle", withConfiguration: imageConfiguration)
+        button.setImage(
+            image,
+            for: .normal
+        )
+        button.sizeToFit()
+        button.tintColor = .white
+        button.addTarget(
+            self,
+            action: #selector(showLicenseView),
+            for: .touchUpInside
+        )
+        button.setTitle("Licenças", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        button.alignTextBelow()
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        return button
+    }()
     
     fileprivate lazy var historyButton: UIButton = {
-        let button = UIButton(type: .custom)
+        let button = UIButton()
         button.setImage(
             UIImage(named: "history-button"),
             for: .normal
@@ -51,6 +80,9 @@ final class ViewController: UIViewController {
             action: #selector(showHistoryView),
             for: .touchUpInside
         )
+        button.setTitle("Histórico", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        button.alignTextBelow()
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -67,11 +99,15 @@ final class ViewController: UIViewController {
             action: #selector(showAddTaskView),
             for: .touchUpInside
         )
+        button.setTitle("Adicionar", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        button.alignTextBelow()
+
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
     }()
-    
+
     fileprivate lazy var imageBackground: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "background-2")
@@ -123,6 +159,10 @@ final class ViewController: UIViewController {
         historyViewController.modalTransitionStyle = .crossDissolve
         self.present(historyViewController, animated: true)
     }
+
+    @objc private func showLicenseView() {
+        print("Licença")
+    }
     
 }
 
@@ -169,15 +209,20 @@ extension ViewController: ViewCoding {
             addButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             addButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             addButton.heightAnchor.constraint(equalToConstant: view.bounds.height*0.1),
-            addButton.widthAnchor.constraint(equalToConstant: view.bounds.height*0.1),
+            addButton.widthAnchor.constraint(equalToConstant: view.bounds.height*0.15),
             
             historyButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             historyButton.trailingAnchor.constraint(
                 equalTo: addButton.leadingAnchor,
-                constant: -view.bounds.height*0.05
+                constant: -view.bounds.height*0.01
             ),
             historyButton.heightAnchor.constraint(equalToConstant: view.bounds.height*0.1),
-            historyButton.widthAnchor.constraint(equalToConstant: view.bounds.height*0.1),
+            historyButton.widthAnchor.constraint(equalToConstant: view.bounds.height*0.2),
+
+            licenseButton.heightAnchor.constraint(equalToConstant: view.bounds.height*0.1),
+            licenseButton.widthAnchor.constraint(equalToConstant: view.bounds.height*0.15),
+            licenseButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            licenseButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             
             marcoCharacter.heightAnchor.constraint(equalToConstant: 440),
             marcoCharacter.widthAnchor.constraint(equalToConstant: 216),
@@ -217,6 +262,7 @@ extension ViewController: ViewCoding {
         view.addSubview(tasksCollectionView)
         view.addSubview(addButton)
         view.addSubview(historyButton)
+        view.addSubview(licenseButton)
     }
     
 }
