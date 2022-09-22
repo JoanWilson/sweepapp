@@ -30,7 +30,7 @@ extension ViewController {
 
     private func zombieAnimation() {
 
-        let zombieNames: [String] = ["R1", "R2", "R3", "R4", "R5", "R6"]
+        let zombieNames: [String] = ["BP1", "BP2"]
         let zombieImages: [UIImage] = self.animateArrayImageWithArrayString(zombieNames)
 
         self.zombieCharacter.animationImages = zombieImages
