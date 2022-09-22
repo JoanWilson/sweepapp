@@ -14,7 +14,9 @@ final class TasksCollectionViewCell: UICollectionViewCell {
     lazy var taskLabel: UILabel = {
         let label = UILabel()
         label.text = "Task"
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
+
         return label
     }()
 
