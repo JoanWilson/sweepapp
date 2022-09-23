@@ -10,13 +10,25 @@ import UIKit
 
 extension LicenseViewController: UITableViewDelegate, UITableViewDataSource {
 
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Componentes"
+    }
+
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+
+        if let header = view as? UITableViewHeaderFooterView {
+
+            header.textLabel?.textColor = .white
+        }
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfLicences.count
+        return viewModel.data.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = arrayOfLicences[indexPath.row]
+        cell.textLabel?.text = viewModel.data[indexPath.row].object
         cell.textLabel?.textColor = .white
         cell.backgroundColor = .clear
 
@@ -24,15 +36,10 @@ extension LicenseViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(arrayOfLicences[indexPath.row])
-    }
 
-}
-
-class LicenseDetailViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        let licenseDetailViewController = LicenseDetailViewController()
+        licenseDetailViewController.license = viewModel.data[indexPath.row]
+        self.navigationController?.pushViewController(licenseDetailViewController, animated: true)
 
     }
 

@@ -17,6 +17,9 @@
 		3FA9977328CB646F00597EFF /* SweepAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977228CB646F00597EFF /* SweepAppTests.swift */; };
 		3FA9977D28CB646F00597EFF /* SweepAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977C28CB646F00597EFF /* SweepAppUITests.swift */; };
 		3FA9977F28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977E28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift */; };
+		8518D16E28DDD8BA00881A63 /* LicenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518D16D28DDD8BA00881A63 /* LicenseViewModel.swift */; };
+		8518D17128DDD8E700881A63 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518D17028DDD8E700881A63 /* License.swift */; };
+		8518D17328DDDA2D00881A63 /* LicenseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518D17228DDDA2D00881A63 /* LicenseDetailViewController.swift */; };
 		8529297328DB2E9800392D41 /* UIView+AddBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8529297228DB2E9800392D41 /* UIView+AddBorders.swift */; };
 		8529297D28DC9C3C00392D41 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8529297C28DC9C3C00392D41 /* InitialViewController.swift */; };
 		854C723C28CF7230009A9301 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C723B28CF7230009A9301 /* CoreDataManagerTests.swift */; };
@@ -77,6 +80,9 @@
 		567DA25A29E41546A0BFD403 /* Pods_SweepApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SweepApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7676043A4293BD7D2FE2252A /* Pods-SweepAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepAppTests.release.xcconfig"; path = "Target Support Files/Pods-SweepAppTests/Pods-SweepAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		81D29A45235440DF1E818E77 /* Pods_SweepApp_SweepAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SweepApp_SweepAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8518D16D28DDD8BA00881A63 /* LicenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewModel.swift; sourceTree = "<group>"; };
+		8518D17028DDD8E700881A63 /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
+		8518D17228DDDA2D00881A63 /* LicenseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseDetailViewController.swift; sourceTree = "<group>"; };
 		8529297228DB2E9800392D41 /* UIView+AddBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddBorders.swift"; sourceTree = "<group>"; };
 		8529297C28DC9C3C00392D41 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		854C723B28CF7230009A9301 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
@@ -259,6 +265,7 @@
 			children = (
 				85526B6628CB868300A7C790 /* Task.swift */,
 				85ECDCA528D10F2700E5C025 /* TaskMoc.swift */,
+				8518D17028DDD8E700881A63 /* License.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				85526B6228CB863500A7C790 /* ViewModel.swift */,
+				8518D16D28DDD8BA00881A63 /* LicenseViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -296,6 +304,7 @@
 			children = (
 				858FCF0C28DCE0270076E6FB /* LicenseViewController.swift */,
 				858FCF1028DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift */,
+				8518D17228DDDA2D00881A63 /* LicenseDetailViewController.swift */,
 			);
 			path = LicenseController;
 			sourceTree = "<group>";
@@ -561,12 +570,14 @@
 			files = (
 				85526B6728CB868300A7C790 /* Task.swift in Sources */,
 				858FCF1128DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift in Sources */,
+				8518D17128DDD8E700881A63 /* License.swift in Sources */,
 				3FA9976028CB646C00597EFF /* ViewController.swift in Sources */,
 				85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */,
 				85ECDCF528D8A1B800E5C025 /* HistoryViewController.swift in Sources */,
 				85526B6528CB866700A7C790 /* CoreDataManager.swift in Sources */,
 				85ECDCEC28D3644500E5C025 /* TextFieldWithPadding.swift in Sources */,
 				85ECDCA628D10F2700E5C025 /* TaskMoc.swift in Sources */,
+				8518D16E28DDD8BA00881A63 /* LicenseViewModel.swift in Sources */,
 				85ECDCF728D8A8E800E5C025 /* HistoryWindowView.swift in Sources */,
 				85526B6328CB863500A7C790 /* ViewModel.swift in Sources */,
 				85ECDCEA28D29CE400E5C025 /* AddTaskWindowView.swift in Sources */,
@@ -582,6 +593,7 @@
 				858FCF0F28DCE1F50076E6FB /* ViewController+ViewCoding.swift in Sources */,
 				858FCF0D28DCE0270076E6FB /* LicenseViewController.swift in Sources */,
 				3F7FCC4D28D8961E00A5517F /* ViewController+Animations.swift in Sources */,
+				8518D17328DDDA2D00881A63 /* LicenseDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
