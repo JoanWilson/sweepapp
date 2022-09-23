@@ -25,6 +25,9 @@
 		85526B6528CB866700A7C790 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6428CB866700A7C790 /* CoreDataManager.swift */; };
 		85526B6728CB868300A7C790 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6628CB868300A7C790 /* Task.swift */; };
 		858FCF0628DCD6390076E6FB /* UIButton+AlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FCF0528DCD6390076E6FB /* UIButton+AlignLabel.swift */; };
+		858FCF0D28DCE0270076E6FB /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FCF0C28DCE0270076E6FB /* LicenseViewController.swift */; };
+		858FCF0F28DCE1F50076E6FB /* ViewController+ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FCF0E28DCE1F50076E6FB /* ViewController+ViewCoding.swift */; };
+		858FCF1128DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FCF1028DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift */; };
 		85ECDCA428D10F0700E5C025 /* TasksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */; };
 		85ECDCA628D10F2700E5C025 /* TaskMoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA528D10F2700E5C025 /* TaskMoc.swift */; };
 		85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA828D10F9300E5C025 /* ViewCoding.swift */; };
@@ -82,6 +85,9 @@
 		85526B6428CB866700A7C790 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		85526B6628CB868300A7C790 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		858FCF0528DCD6390076E6FB /* UIButton+AlignLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+AlignLabel.swift"; sourceTree = "<group>"; };
+		858FCF0C28DCE0270076E6FB /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		858FCF0E28DCE1F50076E6FB /* ViewController+ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ViewCoding.swift"; sourceTree = "<group>"; };
+		858FCF1028DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LicenseViewController+TableViewController.swift"; sourceTree = "<group>"; };
 		85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCollectionViewCell.swift; sourceTree = "<group>"; };
 		85ECDCA528D10F2700E5C025 /* TaskMoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMoc.swift; sourceTree = "<group>"; };
 		85ECDCA828D10F9300E5C025 /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 			children = (
 				3FA9975F28CB646C00597EFF /* ViewController.swift */,
 				3F7FCC4C28D8961E00A5517F /* ViewController+Animations.swift */,
+				858FCF0E28DCE1F50076E6FB /* ViewController+ViewCoding.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -267,6 +274,7 @@
 		85526B5E28CB84B400A7C790 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				858FCF0728DCDED00076E6FB /* LicenseController */,
 				8529297B28DC966200392D41 /* InitialViewController */,
 				85ECDCF328D8A1A300E5C025 /* HistoryViewController */,
 				3F7FCC4B28D895FB00A5517F /* ViewController */,
@@ -281,6 +289,15 @@
 				85526B6428CB866700A7C790 /* CoreDataManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		858FCF0728DCDED00076E6FB /* LicenseController */ = {
+			isa = PBXGroup;
+			children = (
+				858FCF0C28DCE0270076E6FB /* LicenseViewController.swift */,
+				858FCF1028DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift */,
+			);
+			path = LicenseController;
 			sourceTree = "<group>";
 		};
 		85ECDCA728D10F7F00E5C025 /* Protocols */ = {
@@ -543,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85526B6728CB868300A7C790 /* Task.swift in Sources */,
+				858FCF1128DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift in Sources */,
 				3FA9976028CB646C00597EFF /* ViewController.swift in Sources */,
 				85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */,
 				85ECDCF528D8A1B800E5C025 /* HistoryViewController.swift in Sources */,
@@ -561,6 +579,8 @@
 				858FCF0628DCD6390076E6FB /* UIButton+AlignLabel.swift in Sources */,
 				3FA9975E28CB646C00597EFF /* SceneDelegate.swift in Sources */,
 				85526B5728CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld in Sources */,
+				858FCF0F28DCE1F50076E6FB /* ViewController+ViewCoding.swift in Sources */,
+				858FCF0D28DCE0270076E6FB /* LicenseViewController.swift in Sources */,
 				3F7FCC4D28D8961E00A5517F /* ViewController+Animations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

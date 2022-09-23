@@ -142,6 +142,7 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isToolbarHidden = false
         buildLayout()
     }
     
@@ -161,7 +162,10 @@ final class ViewController: UIViewController {
     }
 
     @objc private func showLicenseView() {
-        print("Licença")
+        let licenseViewController = UINavigationController(rootViewController: LicenseViewController())
+        licenseViewController.modalPresentationStyle = .overCurrentContext
+        licenseViewController.modalTransitionStyle = .crossDissolve
+        self.present(licenseViewController, animated: true)
     }
     
 }

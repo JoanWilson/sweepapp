@@ -113,11 +113,13 @@ class InitialViewController: UIViewController {
                 equalTo: self.view.leadingAnchor, constant: 140
             ),
             label1.centerXAnchor.constraint(
-                equalTo: view.centerXAnchor
+                equalTo: view.centerXAnchor,
+                constant: view.bounds.width*0.03
             ),
             label1.centerYAnchor.constraint(
                 equalTo: view.centerYAnchor
-            )
+            ),
+
 
         ])
     }
