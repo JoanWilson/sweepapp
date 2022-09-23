@@ -15,6 +15,7 @@ final class HistoryCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Task"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
 
         return label
     }()

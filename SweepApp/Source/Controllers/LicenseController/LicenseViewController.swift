@@ -9,11 +9,7 @@ import UIKit
 
 class LicenseViewController: UIViewController {
 
-    public var arrayOfLicences: [String] = [
-        "Componente 1",
-        "Componente 2",
-        "Componente 3"
-    ]
+    public var viewModel: LicenseViewModel = LicenseViewModel()
 
     fileprivate lazy var blurEffectBackground: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
