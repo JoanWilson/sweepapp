@@ -12,9 +12,26 @@ final class ViewController: UIViewController {
     
     fileprivate var viewModel = ViewModel() {
         didSet {
+            NSLayoutConstraint.activate([
+                zombieLifeBar.bottomAnchor.constraint(equalTo: zombieCharacter.topAnchor, constant: -view.bounds.height*0.05),
+                zombieLifeBar.heightAnchor.constraint(equalToConstant: 10),
+                zombieLifeBar.widthAnchor.constraint(equalToConstant: CGFloat(viewModel.getUncompletedArray().count)),
+                zombieLifeBar.centerXAnchor.constraint(equalTo: zombieCharacter.centerXAnchor)
+            ])
+            print(viewModel.getUncompletedArray().count)
+            
+
             tasksCollectionView.reloadData()
         }
     }
+
+    fileprivate lazy var zombieLifeBar: UIView = {
+        let lifeBar = UIView()
+        lifeBar.backgroundColor = .systemGreen
+        lifeBar.translatesAutoresizingMaskIntoConstraints = false
+
+        return lifeBar
+    }()
 
     public lazy var noTaskDetectedLabel: UILabel = {
         let label = UILabel()
@@ -184,6 +201,7 @@ extension ViewController: AddTaskWindowDelegate {
     func addANewTask(nameTask: String) {
         viewModel.service.addATask(for: nameTask)
         viewModel.setTaskArray()
+        
     }
 }
 
@@ -266,7 +284,9 @@ extension ViewController: ViewCoding {
             ),
 
             noTaskDetectedLabel.centerYAnchor.constraint(equalTo: tasksCollectionView.centerYAnchor),
-            noTaskDetectedLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            noTaskDetectedLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+
+
 
         ])
     }
@@ -282,6 +302,7 @@ extension ViewController: ViewCoding {
         view.addSubview(historyButton)
         view.addSubview(licenseButton)
         view.addSubview(noTaskDetectedLabel)
+        view.addSubview(zombieLifeBar)
 
     }
     
