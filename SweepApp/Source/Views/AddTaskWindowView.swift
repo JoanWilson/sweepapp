@@ -73,7 +73,7 @@ final class AddTaskWindowView: UIView {
         button.setTitle("Cancelar", for: .normal)
         button.tintColor = .white
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.backgroundColor = .red
+        button.backgroundColor = .gray
         button.layer.cornerRadius = 5
         button.translatesAutoresizingMaskIntoConstraints = false
 

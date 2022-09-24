@@ -118,8 +118,7 @@ class InitialViewController: UIViewController {
             ),
             label1.centerYAnchor.constraint(
                 equalTo: view.centerYAnchor
-            ),
-
+            )
 
         ])
     }

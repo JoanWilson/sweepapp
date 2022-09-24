@@ -30,7 +30,7 @@ extension LicenseViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = viewModel.data[indexPath.row].object
         cell.textLabel?.textColor = .white
-        cell.backgroundColor = .clear
+        cell.backgroundColor = .darkGray
 
         return cell
     }
@@ -40,6 +40,7 @@ extension LicenseViewController: UITableViewDelegate, UITableViewDataSource {
         let licenseDetailViewController = LicenseDetailViewController()
         licenseDetailViewController.license = viewModel.data[indexPath.row]
         self.navigationController?.pushViewController(licenseDetailViewController, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
 
     }
 

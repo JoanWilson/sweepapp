@@ -11,6 +11,8 @@ class LicenseViewController: UIViewController {
 
     public var viewModel: LicenseViewModel = LicenseViewModel()
 
+    public var selectedIndex = IndexPath(row: -1, section: 0)
+
     fileprivate lazy var blurEffectBackground: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -23,6 +25,7 @@ class LicenseViewController: UIViewController {
     private lazy var licenseTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.separatorColor = .lightGray
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .clear
 

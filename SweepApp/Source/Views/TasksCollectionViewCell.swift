@@ -11,6 +11,14 @@ final class TasksCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "TasksCollectionViewCell"
 
+    lazy var buttonMenu: UIButton = {
+        let button = UIButton()
+        button.showsMenuAsPrimaryAction = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        return button
+    }()
+
     lazy var taskLabel: UILabel = {
         let label = UILabel()
         label.text = "Task"
@@ -56,13 +64,18 @@ extension TasksCollectionViewCell: ViewCoding {
             imageLogo.widthAnchor.constraint(equalToConstant: self.bounds.width*0.2),
             taskLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             taskLabel.leadingAnchor.constraint(equalTo: imageLogo.trailingAnchor),
-            taskLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+            taskLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            buttonMenu.topAnchor.constraint(equalTo: self.topAnchor),
+            buttonMenu.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            buttonMenu.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            buttonMenu.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
 
     func setupHierarchy() {
         self.addSubview(taskLabel)
         self.addSubview(imageLogo)
+        self.addSubview(buttonMenu)
     }
 
 }
