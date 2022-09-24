@@ -9,12 +9,10 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func pin(to superview: UIView)  {
+    func pin(to superview: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(equalTo: superview.topAnchor)
         ])
     }
 }
-
-

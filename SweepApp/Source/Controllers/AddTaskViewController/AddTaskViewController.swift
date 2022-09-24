@@ -26,6 +26,7 @@ final class AddTaskViewController: UIViewController {
         windowAddTask.translatesAutoresizingMaskIntoConstraints = false
         windowAddTask.backgroundColor = UIColor(named: "window-color")
         windowAddTask.layer.cornerRadius = 10
+
         return windowAddTask
     }()
 

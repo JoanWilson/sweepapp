@@ -16,7 +16,7 @@ class LicenseViewModel {
             object: "Body Muscular White v2",
 
             type: [
-            "CC-BY-SA 3.0",
+            "CC-BY-SA 3.0"
             ],
 
             authors: [
@@ -37,7 +37,7 @@ class LicenseViewModel {
 
             links: [
                 "https://opengameart.org/content/lpc-barbarian-sprite-base",
-                "https://opengameart.org/content/lpc-character-bases",
+                "https://opengameart.org/content/lpc-character-bases"
             ]
         ),
 
@@ -46,19 +46,19 @@ class LicenseViewModel {
 
             type: [
             "CC-BY-SA 3.0",
-            "GPL 3.0",
+            "GPL 3.0"
             ],
 
             authors: [
             "David Conway Jr. (JaidynReiman)",
             "Stephen Challener (Redshrike)",
             "Johannes Sjölund (wulax)",
-            "Matthew Krohn (makrohn)",
+            "Matthew Krohn (makrohn)"
             ],
 
             links: [
             "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
-            "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+            "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites"
             ]
         ),
         License(
@@ -70,7 +70,7 @@ class LicenseViewModel {
             ],
 
             authors: [
-            "David Conway Jr. (JaidynReiman)",
+            "David Conway Jr. (JaidynReiman)"
             ],
 
             links: [
@@ -82,7 +82,7 @@ class LicenseViewModel {
             object: "Hat Bandana Red",
 
             type: [
-            "CC-BY-SA 3.0",
+            "CC-BY-SA 3.0"
             ],
 
             authors: [
@@ -93,7 +93,7 @@ class LicenseViewModel {
 
             links: [
             "https://opengameart.org/content/lpc-female-orcogregoblintroll-base-walkcycle",
-            "https://github.com/makrohn/Universal-LPC-spritesheet/commit/f50007cb47c235d8896cafae7a613f0b6a9a09a8?short_path=02b86d4#diff-02b86d45789a3e3e8e79519c7d17d15c9e6ecc9b4ddecb1bcd8dfbbaef430b75",
+            "https://github.com/makrohn/Universal-LPC-spritesheet/commit/f50007cb47c235d8896cafae7a613f0b6a9a09a8?short_path=02b86d4#diff-02b86d45789a3e3e8e79519c7d17d15c9e6ecc9b4ddecb1bcd8dfbbaef430b75"
 
             ]
         ),
@@ -113,15 +113,14 @@ class LicenseViewModel {
             ],
 
             links: [
-            "https://opengameart.org/content/more-lpc-clothes-and-hair",
-
+            "https://opengameart.org/content/more-lpc-clothes-and-hair"
             ]
         ),
         License(
             object: "Weapon LognSword",
 
             type: [
-            "CC-BY-SA 3.0.",
+            "CC-BY-SA 3.0."
             ],
 
             authors: [
@@ -161,15 +160,15 @@ class LicenseViewModel {
             object: "Hangar Scene Tileset",
 
             type: [
-            "CC0",
+            "CC0"
             ],
 
             authors: [
-            "Ansimuz",
+            "Ansimuz"
             ],
 
             links: [
-            "https://opengameart.org/content/bulkhead-walls-hangar",
+            "https://opengameart.org/content/bulkhead-walls-hangar"
 
             ]
         ),
@@ -177,20 +176,18 @@ class LicenseViewModel {
             object: "Ground",
 
             type: [
-            "OGA-BY 3.0",
+            "OGA-BY 3.0"
             ],
 
             authors: [
-            "CraftPix.net 2D Game Assets",
+            "CraftPix.net 2D Game Assets"
             ],
 
             links: [
-            "https://opengameart.org/content/oga-by-30-faq",
+            "https://opengameart.org/content/oga-by-30-faq"
 
             ]
-        ),
-
-
+        )
 
     ]
 

@@ -36,6 +36,7 @@ class LicenseDetailViewController: UIViewController {
     private lazy var licenseDetailTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "licenseCell")
+        tableView.separatorColor = .lightGray
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .clear
 
@@ -117,7 +118,7 @@ extension LicenseDetailViewController: UITableViewDataSource, UITableViewDelegat
         let cell = tableView.dequeueReusableCell(withIdentifier: "licenseCell", for: indexPath)
         let items = self.sections[indexPath.section].rows
         let item = items[indexPath.row]
-        cell.backgroundColor = .clear
+        cell.backgroundColor = .darkGray
         cell.textLabel?.text = item
         cell.textLabel?.textColor = .white
 

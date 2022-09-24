@@ -8,7 +8,6 @@
 import UIKit
 import CoreData
 
-
 final class ViewController: UIViewController {
     
     fileprivate var viewModel = ViewModel() {
@@ -16,7 +15,18 @@ final class ViewController: UIViewController {
             tasksCollectionView.reloadData()
         }
     }
-    
+
+    public lazy var noTaskDetectedLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Sem tarefas para completar, adicione mais tarefas!"
+        label.numberOfLines = 0
+        label.textColor = .white
+        label.isHidden = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }()
+
     public lazy var marcoCharacter: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -253,7 +263,11 @@ extension ViewController: ViewCoding {
             zombieCharacter.leadingAnchor.constraint(
                 equalTo: marcoCharacter.centerXAnchor,
                 constant: view.bounds.width*0.08
-            )
+            ),
+
+            noTaskDetectedLabel.centerYAnchor.constraint(equalTo: tasksCollectionView.centerYAnchor),
+            noTaskDetectedLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+
         ])
     }
     
@@ -267,6 +281,8 @@ extension ViewController: ViewCoding {
         view.addSubview(addButton)
         view.addSubview(historyButton)
         view.addSubview(licenseButton)
+        view.addSubview(noTaskDetectedLabel)
+
     }
     
 }
@@ -274,14 +290,22 @@ extension ViewController: ViewCoding {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return viewModel.getUncompletedArray().count
+        if viewModel.getUncompletedArray().count == 0 {
+            self.noTaskDetectedLabel.isHidden = false
+            buildLayout()
+            return 0
+        } else {
+            self.noTaskDetectedLabel.isHidden = true
+            return viewModel.getUncompletedArray().count
+        }
+
     }
     
     public func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        
+
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: TasksCollectionViewCell.identifier,
             for: indexPath
@@ -289,22 +313,32 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             return UICollectionViewCell()
             
         }
+        let favorite = UIAction(title: "Completar",
+          image: UIImage(systemName: "checkmark.square")) { _ in
+            DispatchQueue.main.async {
+                let task = self.viewModel.getUncompletedArray()[indexPath.row]
+                self.viewModel.service.completeATask(task)
+                self.viewModel.setTaskArray()
+                self.doAnimate()
+                print(indexPath)
+            }
+        }
 
-            cell.taskLabel.text = viewModel.getUncompletedArray()[indexPath.row].name
+        cell.taskLabel.text = viewModel.getUncompletedArray()[indexPath.row].name
+        cell.buttonMenu.menu = UIMenu(
+            title: "\(viewModel.getUncompletedArray()[indexPath.row].name!)",
+            children: [favorite]
+        )
 
         return cell
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        DispatchQueue.main.async {
-            let task = self.viewModel.getUncompletedArray()[indexPath.row]
-            self.viewModel.service.completeATask(task)
-            self.viewModel.setTaskArray()
-            self.doAnimate()
-            print(indexPath)
-        }
+    }
 
+    func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
 }
