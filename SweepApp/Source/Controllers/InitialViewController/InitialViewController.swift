@@ -63,7 +63,7 @@ class InitialViewController: UIViewController {
         if step == 1 {
             label1.text = """
             Minha terra foi atacada por zumbis e
-            estou procurando refugio em alguma cidade vizinha...
+            estou procurando refúgio em alguma cidade vizinha...
             """
         }
         if step == 2 {
