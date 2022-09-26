@@ -12,9 +12,18 @@ final class ViewController: UIViewController {
     
     fileprivate var viewModel = ViewModel() {
         didSet {
-            tasksCollectionView.reloadData()
+            print(viewModel.getUncompletedArray().count)
+            self.reloadCollection()
         }
     }
+
+    lazy var zombieLifeBar: UIView = {
+        let lifeBar = UIView()
+        lifeBar.backgroundColor = .systemGreen
+        lifeBar.translatesAutoresizingMaskIntoConstraints = false
+
+        return lifeBar
+    }()
 
     public lazy var noTaskDetectedLabel: UILabel = {
         let label = UILabel()
@@ -177,13 +186,35 @@ final class ViewController: UIViewController {
         licenseViewController.modalTransitionStyle = .crossDissolve
         self.present(licenseViewController, animated: true)
     }
-    
+
+    private func reloadCollection() {
+        UIView.transition(
+            with: tasksCollectionView,
+            duration: 0.7,
+            options: .transitionCrossDissolve,
+            animations: {
+                self.tasksCollectionView.reloadData()
+            }
+        )
+
+        if viewModel.getUncompletedArray().count == 0 {
+            UIView.transition(
+                with: self.noTaskDetectedLabel,
+                duration: 1,
+                options: .transitionCrossDissolve,
+                animations: {
+                }
+            )
+        }
+    }
+
 }
 
 extension ViewController: AddTaskWindowDelegate {
     func addANewTask(nameTask: String) {
         viewModel.service.addATask(for: nameTask)
         viewModel.setTaskArray()
+        
     }
 }
 
@@ -201,6 +232,7 @@ extension ViewController: ViewCoding {
     }
     
     func setupConstraints() {
+
         NSLayoutConstraint.activate([
             imageBackground.topAnchor.constraint(equalTo: view.topAnchor),
             imageBackground.bottomAnchor.constraint(equalTo: imageCollectionViewBackground.topAnchor),
@@ -282,12 +314,12 @@ extension ViewController: ViewCoding {
         view.addSubview(historyButton)
         view.addSubview(licenseButton)
         view.addSubview(noTaskDetectedLabel)
-
     }
     
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
         if viewModel.getUncompletedArray().count == 0 {
@@ -314,13 +346,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             
         }
         let favorite = UIAction(title: "Completar",
-          image: UIImage(systemName: "checkmark.square")) { _ in
+                                image: UIImage(systemName: "checkmark.square")) { _ in
             DispatchQueue.main.async {
                 let task = self.viewModel.getUncompletedArray()[indexPath.row]
                 self.viewModel.service.completeATask(task)
                 self.viewModel.setTaskArray()
                 self.doAnimate()
                 print(indexPath)
+
             }
         }
 
