@@ -17,6 +17,7 @@
 		3FA9977328CB646F00597EFF /* SweepAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977228CB646F00597EFF /* SweepAppTests.swift */; };
 		3FA9977D28CB646F00597EFF /* SweepAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977C28CB646F00597EFF /* SweepAppUITests.swift */; };
 		3FA9977F28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977E28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift */; };
+		4C1B16E428E1DF9100ED5D66 /* HapticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B16E328E1DF9100ED5D66 /* HapticsViewController.swift */; };
 		8518D16E28DDD8BA00881A63 /* LicenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518D16D28DDD8BA00881A63 /* LicenseViewModel.swift */; };
 		8518D17128DDD8E700881A63 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518D17028DDD8E700881A63 /* License.swift */; };
 		8518D17328DDDA2D00881A63 /* LicenseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518D17228DDDA2D00881A63 /* LicenseDetailViewController.swift */; };
@@ -77,6 +78,7 @@
 		3FA9977828CB646F00597EFF /* SweepAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SweepAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA9977C28CB646F00597EFF /* SweepAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweepAppUITests.swift; sourceTree = "<group>"; };
 		3FA9977E28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweepAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4C1B16E328E1DF9100ED5D66 /* HapticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsViewController.swift; sourceTree = "<group>"; };
 		567DA25A29E41546A0BFD403 /* Pods_SweepApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SweepApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7676043A4293BD7D2FE2252A /* Pods-SweepAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepAppTests.release.xcconfig"; path = "Target Support Files/Pods-SweepAppTests/Pods-SweepAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		81D29A45235440DF1E818E77 /* Pods_SweepApp_SweepAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SweepApp_SweepAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 				3FA9975F28CB646C00597EFF /* ViewController.swift */,
 				3F7FCC4C28D8961E00A5517F /* ViewController+Animations.swift */,
 				858FCF0E28DCE1F50076E6FB /* ViewController+ViewCoding.swift */,
+				4C1B16E328E1DF9100ED5D66 /* HapticsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85526B6728CB868300A7C790 /* Task.swift in Sources */,
+				4C1B16E428E1DF9100ED5D66 /* HapticsViewController.swift in Sources */,
 				858FCF1128DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift in Sources */,
 				8518D17128DDD8E700881A63 /* License.swift in Sources */,
 				3FA9976028CB646C00597EFF /* ViewController.swift in Sources */,
@@ -772,7 +776,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F2MBMJ3PK6;
+				DEVELOPMENT_TEAM = 964GK867Y7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SweepApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TaskZ;
@@ -785,7 +789,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = barbosanicolas.SweepApp;
+				PRODUCT_BUNDLE_IDENTIFIER = anaraiany.SweepApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -801,7 +805,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F2MBMJ3PK6;
+				DEVELOPMENT_TEAM = 964GK867Y7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SweepApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TaskZ;
@@ -814,7 +818,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = barbosanicolas.SweepApp;
+				PRODUCT_BUNDLE_IDENTIFIER = anaraiany.SweepApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

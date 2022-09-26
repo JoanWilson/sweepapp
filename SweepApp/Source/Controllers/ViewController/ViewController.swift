@@ -121,7 +121,6 @@ final class ViewController: UIViewController {
         button.setTitle("Adicionar", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
         button.alignTextBelow()
-
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -348,11 +347,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let favorite = UIAction(title: "Completar",
                                 image: UIImage(systemName: "checkmark.square")) { _ in
             DispatchQueue.main.async {
+                Haptics.shared.vibrate(for: .success)
+               
                 let task = self.viewModel.getUncompletedArray()[indexPath.row]
                 self.viewModel.service.completeATask(task)
                 self.viewModel.setTaskArray()
                 self.doAnimate()
                 print(indexPath)
+               
 
             }
         }
@@ -367,11 +369,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
     }
 
     func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    @objc private func sucessfullyBookedFlight() {
+        Haptics.shared.vibrate(for: .success)
     }
     
 }
