@@ -12,20 +12,12 @@ final class ViewController: UIViewController {
     
     fileprivate var viewModel = ViewModel() {
         didSet {
-            NSLayoutConstraint.activate([
-                zombieLifeBar.bottomAnchor.constraint(equalTo: zombieCharacter.topAnchor, constant: -view.bounds.height*0.05),
-                zombieLifeBar.heightAnchor.constraint(equalToConstant: 10),
-                zombieLifeBar.widthAnchor.constraint(equalToConstant: CGFloat(viewModel.getUncompletedArray().count)),
-                zombieLifeBar.centerXAnchor.constraint(equalTo: zombieCharacter.centerXAnchor)
-            ])
             print(viewModel.getUncompletedArray().count)
-            
-
-            tasksCollectionView.reloadData()
+            self.reloadCollection()
         }
     }
 
-    fileprivate lazy var zombieLifeBar: UIView = {
+    lazy var zombieLifeBar: UIView = {
         let lifeBar = UIView()
         lifeBar.backgroundColor = .systemGreen
         lifeBar.translatesAutoresizingMaskIntoConstraints = false
@@ -194,7 +186,28 @@ final class ViewController: UIViewController {
         licenseViewController.modalTransitionStyle = .crossDissolve
         self.present(licenseViewController, animated: true)
     }
-    
+
+    private func reloadCollection() {
+        UIView.transition(
+            with: tasksCollectionView,
+            duration: 0.7,
+            options: .transitionCrossDissolve,
+            animations: {
+                self.tasksCollectionView.reloadData()
+            }
+        )
+
+        if viewModel.getUncompletedArray().count == 0 {
+            UIView.transition(
+                with: self.noTaskDetectedLabel,
+                duration: 1,
+                options: .transitionCrossDissolve,
+                animations: {
+                }
+            )
+        }
+    }
+
 }
 
 extension ViewController: AddTaskWindowDelegate {
@@ -219,6 +232,7 @@ extension ViewController: ViewCoding {
     }
     
     func setupConstraints() {
+
         NSLayoutConstraint.activate([
             imageBackground.topAnchor.constraint(equalTo: view.topAnchor),
             imageBackground.bottomAnchor.constraint(equalTo: imageCollectionViewBackground.topAnchor),
@@ -284,9 +298,7 @@ extension ViewController: ViewCoding {
             ),
 
             noTaskDetectedLabel.centerYAnchor.constraint(equalTo: tasksCollectionView.centerYAnchor),
-            noTaskDetectedLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-
-
+            noTaskDetectedLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
 
         ])
     }
@@ -302,13 +314,12 @@ extension ViewController: ViewCoding {
         view.addSubview(historyButton)
         view.addSubview(licenseButton)
         view.addSubview(noTaskDetectedLabel)
-        view.addSubview(zombieLifeBar)
-
     }
     
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
         if viewModel.getUncompletedArray().count == 0 {
@@ -335,13 +346,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             
         }
         let favorite = UIAction(title: "Completar",
-          image: UIImage(systemName: "checkmark.square")) { _ in
+                                image: UIImage(systemName: "checkmark.square")) { _ in
             DispatchQueue.main.async {
                 let task = self.viewModel.getUncompletedArray()[indexPath.row]
                 self.viewModel.service.completeATask(task)
                 self.viewModel.setTaskArray()
                 self.doAnimate()
                 print(indexPath)
+
             }
         }
 
