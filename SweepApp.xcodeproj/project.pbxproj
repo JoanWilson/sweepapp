@@ -23,6 +23,7 @@
 		85526B6328CB863500A7C790 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6228CB863500A7C790 /* ViewModel.swift */; };
 		85526B6528CB866700A7C790 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6428CB866700A7C790 /* CoreDataManager.swift */; };
 		85526B6728CB868300A7C790 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6628CB868300A7C790 /* Task.swift */; };
+		857734CA28DB4F4400A1CC6C /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857734C928DB4F4400A1CC6C /* LicenseViewController.swift */; };
 		85ECDCA428D10F0700E5C025 /* TasksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */; };
 		85ECDCA628D10F2700E5C025 /* TaskMoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA528D10F2700E5C025 /* TaskMoc.swift */; };
 		85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA828D10F9300E5C025 /* ViewCoding.swift */; };
@@ -78,6 +79,7 @@
 		85526B6228CB863500A7C790 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		85526B6428CB866700A7C790 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		85526B6628CB868300A7C790 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		857734C928DB4F4400A1CC6C /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCollectionViewCell.swift; sourceTree = "<group>"; };
 		85ECDCA528D10F2700E5C025 /* TaskMoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMoc.swift; sourceTree = "<group>"; };
 		85ECDCA828D10F9300E5C025 /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		85526B5E28CB84B400A7C790 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				857734C828DB4F2600A1CC6C /* LicenseViewController */,
 				85ECDCF328D8A1A300E5C025 /* HistoryViewController */,
 				3F7FCC4B28D895FB00A5517F /* ViewController */,
 				85ECDCAA28D269AB00E5C025 /* AddTaskViewController.swift */,
@@ -267,6 +270,14 @@
 				85526B6428CB866700A7C790 /* CoreDataManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		857734C828DB4F2600A1CC6C /* LicenseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				857734C928DB4F4400A1CC6C /* LicenseViewController.swift */,
+			);
+			path = LicenseViewController;
 			sourceTree = "<group>";
 		};
 		85ECDCA728D10F7F00E5C025 /* Protocols */ = {
@@ -541,6 +552,7 @@
 				85ECDCAB28D269AB00E5C025 /* AddTaskViewController.swift in Sources */,
 				3FA9975C28CB646C00597EFF /* AppDelegate.swift in Sources */,
 				8529297328DB2E9800392D41 /* UIView+AddBorders.swift in Sources */,
+				857734CA28DB4F4400A1CC6C /* LicenseViewController.swift in Sources */,
 				85ECDCF928D9DDB300E5C025 /* HistoryCollectionViewCell.swift in Sources */,
 				85ECDCA428D10F0700E5C025 /* TasksCollectionViewCell.swift in Sources */,
 				3FA9975E28CB646C00597EFF /* SceneDelegate.swift in Sources */,
