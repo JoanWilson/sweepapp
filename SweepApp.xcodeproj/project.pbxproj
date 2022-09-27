@@ -31,6 +31,9 @@
 		858FCF0D28DCE0270076E6FB /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FCF0C28DCE0270076E6FB /* LicenseViewController.swift */; };
 		858FCF0F28DCE1F50076E6FB /* ViewController+ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FCF0E28DCE1F50076E6FB /* ViewController+ViewCoding.swift */; };
 		858FCF1128DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FCF1028DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift */; };
+		85CAE39628E33C5600051A0A /* CoreDataMangerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAE39528E33C5600051A0A /* CoreDataMangerTest.swift */; };
+		85CAE39828E341B900051A0A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAE39728E341B900051A0A /* CoreDataStack.swift */; };
+		85CAE39A28E3433200051A0A /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAE39928E3433200051A0A /* TestCoreDataStack.swift */; };
 		85ECDCA428D10F0700E5C025 /* TasksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */; };
 		85ECDCA628D10F2700E5C025 /* TaskMoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA528D10F2700E5C025 /* TaskMoc.swift */; };
 		85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA828D10F9300E5C025 /* ViewCoding.swift */; };
@@ -94,6 +97,9 @@
 		858FCF0C28DCE0270076E6FB /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		858FCF0E28DCE1F50076E6FB /* ViewController+ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ViewCoding.swift"; sourceTree = "<group>"; };
 		858FCF1028DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LicenseViewController+TableViewController.swift"; sourceTree = "<group>"; };
+		85CAE39528E33C5600051A0A /* CoreDataMangerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMangerTest.swift; sourceTree = "<group>"; };
+		85CAE39728E341B900051A0A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		85CAE39928E3433200051A0A /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCollectionViewCell.swift; sourceTree = "<group>"; };
 		85ECDCA528D10F2700E5C025 /* TaskMoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMoc.swift; sourceTree = "<group>"; };
 		85ECDCA828D10F9300E5C025 /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 			children = (
 				3FA9977228CB646F00597EFF /* SweepAppTests.swift */,
 				854C723B28CF7230009A9301 /* CoreDataManagerTests.swift */,
+				85CAE39928E3433200051A0A /* TestCoreDataStack.swift */,
 			);
 			path = SweepAppTests;
 			sourceTree = "<group>";
@@ -303,6 +310,8 @@
 			isa = PBXGroup;
 			children = (
 				85526B6428CB866700A7C790 /* CoreDataManager.swift */,
+				85CAE39528E33C5600051A0A /* CoreDataMangerTest.swift */,
+				85CAE39728E341B900051A0A /* CoreDataStack.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -583,10 +592,12 @@
 				85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */,
 				85ECDCF528D8A1B800E5C025 /* HistoryViewController.swift in Sources */,
 				85526B6528CB866700A7C790 /* CoreDataManager.swift in Sources */,
+				85CAE39828E341B900051A0A /* CoreDataStack.swift in Sources */,
 				85ECDCEC28D3644500E5C025 /* TextFieldWithPadding.swift in Sources */,
 				85ECDCA628D10F2700E5C025 /* TaskMoc.swift in Sources */,
 				8518D16E28DDD8BA00881A63 /* LicenseViewModel.swift in Sources */,
 				85ECDCF728D8A8E800E5C025 /* HistoryWindowView.swift in Sources */,
+				85CAE39628E33C5600051A0A /* CoreDataMangerTest.swift in Sources */,
 				85526B6328CB863500A7C790 /* ViewModel.swift in Sources */,
 				85ECDCEA28D29CE400E5C025 /* AddTaskWindowView.swift in Sources */,
 				85ECDCAB28D269AB00E5C025 /* AddTaskViewController.swift in Sources */,
@@ -611,6 +622,7 @@
 			files = (
 				854C723C28CF7230009A9301 /* CoreDataManagerTests.swift in Sources */,
 				3FA9977328CB646F00597EFF /* SweepAppTests.swift in Sources */,
+				85CAE39A28E3433200051A0A /* TestCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
