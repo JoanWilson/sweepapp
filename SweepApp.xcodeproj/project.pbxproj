@@ -17,13 +17,24 @@
 		3FA9977328CB646F00597EFF /* SweepAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977228CB646F00597EFF /* SweepAppTests.swift */; };
 		3FA9977D28CB646F00597EFF /* SweepAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977C28CB646F00597EFF /* SweepAppUITests.swift */; };
 		3FA9977F28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9977E28CB646F00597EFF /* SweepAppUITestsLaunchTests.swift */; };
+		8518D16E28DDD8BA00881A63 /* LicenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518D16D28DDD8BA00881A63 /* LicenseViewModel.swift */; };
+		8518D17128DDD8E700881A63 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518D17028DDD8E700881A63 /* License.swift */; };
+		8518D17328DDDA2D00881A63 /* LicenseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518D17228DDDA2D00881A63 /* LicenseDetailViewController.swift */; };
 		8529297328DB2E9800392D41 /* UIView+AddBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8529297228DB2E9800392D41 /* UIView+AddBorders.swift */; };
+		8529297D28DC9C3C00392D41 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8529297C28DC9C3C00392D41 /* InitialViewController.swift */; };
 		854C723C28CF7230009A9301 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C723B28CF7230009A9301 /* CoreDataManagerTests.swift */; };
 		85526B5728CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85526B5528CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld */; };
 		85526B6328CB863500A7C790 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6228CB863500A7C790 /* ViewModel.swift */; };
 		85526B6528CB866700A7C790 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6428CB866700A7C790 /* CoreDataManager.swift */; };
 		85526B6728CB868300A7C790 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85526B6628CB868300A7C790 /* Task.swift */; };
-		857734CA28DB4F4400A1CC6C /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857734C928DB4F4400A1CC6C /* LicenseViewController.swift */; };
+
+		
+
+		858FCF0628DCD6390076E6FB /* UIButton+AlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FCF0528DCD6390076E6FB /* UIButton+AlignLabel.swift */; };
+    857734CA28DB4F4400A1CC6C /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857734C928DB4F4400A1CC6C /* LicenseViewController.swift */; };
+		858FCF0F28DCE1F50076E6FB /* ViewController+ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FCF0E28DCE1F50076E6FB /* ViewController+ViewCoding.swift */; };
+		858FCF1128DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858FCF1028DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift */; };
+
 		85ECDCA428D10F0700E5C025 /* TasksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */; };
 		85ECDCA628D10F2700E5C025 /* TaskMoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA528D10F2700E5C025 /* TaskMoc.swift */; };
 		85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECDCA828D10F9300E5C025 /* ViewCoding.swift */; };
@@ -73,13 +84,22 @@
 		567DA25A29E41546A0BFD403 /* Pods_SweepApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SweepApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7676043A4293BD7D2FE2252A /* Pods-SweepAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweepAppTests.release.xcconfig"; path = "Target Support Files/Pods-SweepAppTests/Pods-SweepAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		81D29A45235440DF1E818E77 /* Pods_SweepApp_SweepAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SweepApp_SweepAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8518D16D28DDD8BA00881A63 /* LicenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewModel.swift; sourceTree = "<group>"; };
+		8518D17028DDD8E700881A63 /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
+		8518D17228DDDA2D00881A63 /* LicenseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseDetailViewController.swift; sourceTree = "<group>"; };
 		8529297228DB2E9800392D41 /* UIView+AddBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddBorders.swift"; sourceTree = "<group>"; };
+		8529297C28DC9C3C00392D41 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		854C723B28CF7230009A9301 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
 		85526B5628CB7F3700A7C790 /* SweepAppDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SweepAppDatabase.xcdatamodel; sourceTree = "<group>"; };
 		85526B6228CB863500A7C790 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		85526B6428CB866700A7C790 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		85526B6628CB868300A7C790 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+
+		858FCF0528DCD6390076E6FB /* UIButton+AlignLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+AlignLabel.swift"; sourceTree = "<group>"; };
 		857734C928DB4F4400A1CC6C /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		858FCF0E28DCE1F50076E6FB /* ViewController+ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ViewCoding.swift"; sourceTree = "<group>"; };
+		858FCF1028DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LicenseViewController+TableViewController.swift"; sourceTree = "<group>"; };
+
 		85ECDCA328D10F0700E5C025 /* TasksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCollectionViewCell.swift; sourceTree = "<group>"; };
 		85ECDCA528D10F2700E5C025 /* TaskMoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskMoc.swift; sourceTree = "<group>"; };
 		85ECDCA828D10F9300E5C025 /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
@@ -128,6 +148,7 @@
 			children = (
 				3FA9975F28CB646C00597EFF /* ViewController.swift */,
 				3F7FCC4C28D8961E00A5517F /* ViewController+Animations.swift */,
+				858FCF0E28DCE1F50076E6FB /* ViewController+ViewCoding.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -188,8 +209,25 @@
 			isa = PBXGroup;
 			children = (
 				8529297228DB2E9800392D41 /* UIView+AddBorders.swift */,
+				858FCF0528DCD6390076E6FB /* UIButton+AlignLabel.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8529297B28DC966200392D41 /* InitialViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8529297C28DC9C3C00392D41 /* InitialViewController.swift */,
+			);
+			path = InitialViewController;
+			sourceTree = "<group>";
+		};
+		8540540128DE7A4A005C00DE /* AddTaskViewController */ = {
+			isa = PBXGroup;
+			children = (
+				85ECDCAA28D269AB00E5C025 /* AddTaskViewController.swift */,
+			);
+			path = AddTaskViewController;
 			sourceTree = "<group>";
 		};
 		85526B5828CB7F8800A7C790 /* Application */ = {
@@ -241,6 +279,7 @@
 			children = (
 				85526B6628CB868300A7C790 /* Task.swift */,
 				85ECDCA528D10F2700E5C025 /* TaskMoc.swift */,
+				8518D17028DDD8E700881A63 /* License.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				85526B6228CB863500A7C790 /* ViewModel.swift */,
+				8518D16D28DDD8BA00881A63 /* LicenseViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -256,10 +296,12 @@
 		85526B5E28CB84B400A7C790 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8540540128DE7A4A005C00DE /* AddTaskViewController */,
 				857734C828DB4F2600A1CC6C /* LicenseViewController */,
+				8529297B28DC966200392D41 /* InitialViewController */,
+
 				85ECDCF328D8A1A300E5C025 /* HistoryViewController */,
 				3F7FCC4B28D895FB00A5517F /* ViewController */,
-				85ECDCAA28D269AB00E5C025 /* AddTaskViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -272,12 +314,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		857734C828DB4F2600A1CC6C /* LicenseViewController */ = {
+		858FCF0728DCDED00076E6FB /* LicenseController */ = {
 			isa = PBXGroup;
 			children = (
 				857734C928DB4F4400A1CC6C /* LicenseViewController.swift */,
+				858FCF1028DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift */,
+				8518D17228DDDA2D00881A63 /* LicenseDetailViewController.swift */,
 			);
-			path = LicenseViewController;
+			path = LicenseController;
+
 			sourceTree = "<group>";
 		};
 		85ECDCA728D10F7F00E5C025 /* Protocols */ = {
@@ -540,12 +585,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				85526B6728CB868300A7C790 /* Task.swift in Sources */,
+				858FCF1128DCF2DF0076E6FB /* LicenseViewController+TableViewController.swift in Sources */,
+				8518D17128DDD8E700881A63 /* License.swift in Sources */,
 				3FA9976028CB646C00597EFF /* ViewController.swift in Sources */,
 				85ECDCA928D10F9300E5C025 /* ViewCoding.swift in Sources */,
 				85ECDCF528D8A1B800E5C025 /* HistoryViewController.swift in Sources */,
 				85526B6528CB866700A7C790 /* CoreDataManager.swift in Sources */,
 				85ECDCEC28D3644500E5C025 /* TextFieldWithPadding.swift in Sources */,
 				85ECDCA628D10F2700E5C025 /* TaskMoc.swift in Sources */,
+				8518D16E28DDD8BA00881A63 /* LicenseViewModel.swift in Sources */,
 				85ECDCF728D8A8E800E5C025 /* HistoryWindowView.swift in Sources */,
 				85526B6328CB863500A7C790 /* ViewModel.swift in Sources */,
 				85ECDCEA28D29CE400E5C025 /* AddTaskWindowView.swift in Sources */,
@@ -555,9 +603,14 @@
 				857734CA28DB4F4400A1CC6C /* LicenseViewController.swift in Sources */,
 				85ECDCF928D9DDB300E5C025 /* HistoryCollectionViewCell.swift in Sources */,
 				85ECDCA428D10F0700E5C025 /* TasksCollectionViewCell.swift in Sources */,
+				8529297D28DC9C3C00392D41 /* InitialViewController.swift in Sources */,
+				858FCF0628DCD6390076E6FB /* UIButton+AlignLabel.swift in Sources */,
 				3FA9975E28CB646C00597EFF /* SceneDelegate.swift in Sources */,
 				85526B5728CB7F3700A7C790 /* SweepAppDatabase.xcdatamodeld in Sources */,
+				858FCF0F28DCE1F50076E6FB /* ViewController+ViewCoding.swift in Sources */,
+				858FCF0D28DCE0270076E6FB /* LicenseViewController.swift in Sources */,
 				3F7FCC4D28D8961E00A5517F /* ViewController+Animations.swift in Sources */,
+				8518D17328DDDA2D00881A63 /* LicenseDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,7 +793,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = barbosanicolas.SweepApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -769,7 +822,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = barbosanicolas.SweepApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

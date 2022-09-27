@@ -12,11 +12,30 @@ final class ViewController: UIViewController {
     
     fileprivate var viewModel = ViewModel() {
         didSet {
-            viewModel.setTaskArray()
-            tasksCollectionView.reloadData()
+            print(viewModel.getUncompletedArray().count)
+            self.reloadCollection()
         }
     }
-    
+
+    lazy var zombieLifeBar: UIView = {
+        let lifeBar = UIView()
+        lifeBar.backgroundColor = .systemGreen
+        lifeBar.translatesAutoresizingMaskIntoConstraints = false
+
+        return lifeBar
+    }()
+
+    public lazy var noTaskDetectedLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Sem tarefas para completar, adicione mais tarefas!"
+        label.numberOfLines = 0
+        label.textColor = .white
+        label.isHidden = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }()
+
     public lazy var marcoCharacter: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,9 +59,37 @@ final class ViewController: UIViewController {
         
         return imageView
     }()
+
+    fileprivate lazy var licenseButton: UIButton = {
+        let button = UIButton(type: .custom)
+        let imageConfiguration = UIImage.SymbolConfiguration(
+            pointSize: view.bounds.height*0.05,
+            weight: .bold,
+            scale: .large
+        )
+        let image = UIImage(systemName: "info.circle", withConfiguration: imageConfiguration)
+        button.setImage(
+            image,
+            for: .normal
+        )
+        button.sizeToFit()
+        button.tintColor = .white
+        button.addTarget(
+            self,
+            action: #selector(showLicenseView),
+            for: .touchUpInside
+        )
+        button.setTitle("Licenças", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        button.alignTextBelow()
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        return button
+    }()
     
     fileprivate lazy var historyButton: UIButton = {
-        let button = UIButton(type: .custom)
+        let button = UIButton()
         button.setImage(
             UIImage(named: "history-button"),
             for: .normal
@@ -52,6 +99,9 @@ final class ViewController: UIViewController {
             action: #selector(showHistoryView),
             for: .touchUpInside
         )
+        button.setTitle("Histórico", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        button.alignTextBelow()
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -68,11 +118,15 @@ final class ViewController: UIViewController {
             action: #selector(showAddTaskView),
             for: .touchUpInside
         )
+        button.setTitle("Adicionar", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        button.alignTextBelow()
+
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
     }()
-    
+
     fileprivate lazy var imageBackground: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "background-2")
@@ -107,29 +161,60 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isToolbarHidden = false
         buildLayout()
     }
     
-    @objc private func showAddTaskView() {
+    @objc public func showAddTaskView() {
         let addTaskViewController = AddTaskViewController()
         addTaskViewController.modalPresentationStyle = .overFullScreen
         addTaskViewController.windowAddTask.delegate = self
-        self.present(addTaskViewController, animated: false)
+        addTaskViewController.modalTransitionStyle = .crossDissolve
+        self.present(addTaskViewController, animated: true)
     }
     
     @objc private func showHistoryView() {
         let historyViewController = HistoryViewController()
         historyViewController.modalPresentationStyle = .overFullScreen
-        self.present(historyViewController, animated: false)
+        historyViewController.modalTransitionStyle = .crossDissolve
+        self.present(historyViewController, animated: true)
     }
-    
-    
+
+    @objc private func showLicenseView() {
+        let licenseViewController = UINavigationController(rootViewController: LicenseViewController())
+        licenseViewController.modalPresentationStyle = .overCurrentContext
+        licenseViewController.modalTransitionStyle = .crossDissolve
+        self.present(licenseViewController, animated: true)
+    }
+
+    private func reloadCollection() {
+        UIView.transition(
+            with: tasksCollectionView,
+            duration: 0.7,
+            options: .transitionCrossDissolve,
+            animations: {
+                self.tasksCollectionView.reloadData()
+            }
+        )
+
+        if viewModel.getUncompletedArray().count == 0 {
+            UIView.transition(
+                with: self.noTaskDetectedLabel,
+                duration: 1,
+                options: .transitionCrossDissolve,
+                animations: {
+                }
+            )
+        }
+    }
+
 }
 
 extension ViewController: AddTaskWindowDelegate {
     func addANewTask(nameTask: String) {
         viewModel.service.addATask(for: nameTask)
         viewModel.setTaskArray()
+        
     }
 }
 
@@ -147,6 +232,7 @@ extension ViewController: ViewCoding {
     }
     
     func setupConstraints() {
+
         NSLayoutConstraint.activate([
             imageBackground.topAnchor.constraint(equalTo: view.topAnchor),
             imageBackground.bottomAnchor.constraint(equalTo: imageCollectionViewBackground.topAnchor),
@@ -169,15 +255,20 @@ extension ViewController: ViewCoding {
             addButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             addButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             addButton.heightAnchor.constraint(equalToConstant: view.bounds.height*0.1),
-            addButton.widthAnchor.constraint(equalToConstant: view.bounds.height*0.1),
+            addButton.widthAnchor.constraint(equalToConstant: view.bounds.height*0.15),
             
             historyButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             historyButton.trailingAnchor.constraint(
                 equalTo: addButton.leadingAnchor,
-                constant: -view.bounds.height*0.05
+                constant: -view.bounds.height*0.01
             ),
             historyButton.heightAnchor.constraint(equalToConstant: view.bounds.height*0.1),
-            historyButton.widthAnchor.constraint(equalToConstant: view.bounds.height*0.1),
+            historyButton.widthAnchor.constraint(equalToConstant: view.bounds.height*0.2),
+
+            licenseButton.heightAnchor.constraint(equalToConstant: view.bounds.height*0.1),
+            licenseButton.widthAnchor.constraint(equalToConstant: view.bounds.height*0.15),
+            licenseButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            licenseButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             
             marcoCharacter.heightAnchor.constraint(equalToConstant: 440),
             marcoCharacter.widthAnchor.constraint(equalToConstant: 216),
@@ -204,7 +295,11 @@ extension ViewController: ViewCoding {
             zombieCharacter.leadingAnchor.constraint(
                 equalTo: marcoCharacter.centerXAnchor,
                 constant: view.bounds.width*0.08
-            )
+            ),
+
+            noTaskDetectedLabel.centerYAnchor.constraint(equalTo: tasksCollectionView.centerYAnchor),
+            noTaskDetectedLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+
         ])
     }
     
@@ -217,28 +312,32 @@ extension ViewController: ViewCoding {
         view.addSubview(tasksCollectionView)
         view.addSubview(addButton)
         view.addSubview(historyButton)
+        view.addSubview(licenseButton)
+        view.addSubview(noTaskDetectedLabel)
     }
     
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var count = 0
 
-        for index in 0..<viewModel.taskArray.count {
-            if !viewModel.taskArray[index].isCompleted {
-                count += 1
-            }
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+        if viewModel.getUncompletedArray().count == 0 {
+            self.noTaskDetectedLabel.isHidden = false
+            buildLayout()
+            return 0
+        } else {
+            self.noTaskDetectedLabel.isHidden = true
+            return viewModel.getUncompletedArray().count
         }
 
-        return count
     }
     
     public func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        
+
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: TasksCollectionViewCell.identifier,
             for: indexPath
@@ -246,22 +345,33 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             return UICollectionViewCell()
             
         }
+        let favorite = UIAction(title: "Completar",
+                                image: UIImage(systemName: "checkmark.square")) { _ in
+            DispatchQueue.main.async {
+                let task = self.viewModel.getUncompletedArray()[indexPath.row]
+                self.viewModel.service.completeATask(task)
+                self.viewModel.setTaskArray()
+                self.doAnimate()
+                print(indexPath)
 
-        if !viewModel.taskArray[indexPath.row].isCompleted {
-
-            cell.taskLabel.text = viewModel.taskArray[indexPath.row].name
+            }
         }
+
+        cell.taskLabel.text = viewModel.getUncompletedArray()[indexPath.row].name
+        cell.buttonMenu.menu = UIMenu(
+            title: "\(viewModel.getUncompletedArray()[indexPath.row].name!)",
+            children: [favorite]
+        )
 
         return cell
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        viewModel.taskArray[indexPath.row].isCompleted = true
-        let task = viewModel.taskArray[indexPath.row]
-        viewModel.service.completeATask(task)
-        viewModel.setTaskArray()
-        doAnimate()
+
+    }
+
+    func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
 }

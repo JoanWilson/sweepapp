@@ -20,7 +20,7 @@ final class HistoryViewController: UIViewController {
 
     public lazy var windowHistory: HistoryWindowView = {
         let windowHistory = HistoryWindowView(frame: .zero) {
-            self.dismiss(animated: false)
+            self.dismiss(animated: true)
         }
         windowHistory.translatesAutoresizingMaskIntoConstraints = false
         windowHistory.backgroundColor = UIColor(named: "window-color")

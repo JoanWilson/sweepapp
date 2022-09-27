@@ -20,11 +20,13 @@ final class AddTaskViewController: UIViewController {
 
     public lazy var windowAddTask: AddTaskWindowView = {
         let windowAddTask = AddTaskWindowView(frame: .zero) {
-            self.dismiss(animated: false)
+
+            self.dismiss(animated: true)
         }
         windowAddTask.translatesAutoresizingMaskIntoConstraints = false
         windowAddTask.backgroundColor = UIColor(named: "window-color")
         windowAddTask.layer.cornerRadius = 10
+
         return windowAddTask
     }()
 
@@ -36,6 +38,7 @@ final class AddTaskViewController: UIViewController {
     }
 
     func cancelView() {
+        self.modalTransitionStyle = .crossDissolve
         self.dismiss(animated: true)
     }
 
