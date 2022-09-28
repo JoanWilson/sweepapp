@@ -233,6 +233,7 @@ extension ViewController: ViewCoding {
         self.startAnimations()
 
     }
+    
     func setupConstraints() {
 
         NSLayoutConstraint.activate([
