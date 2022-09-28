@@ -3,15 +3,15 @@
 //  SweepApp
 //
 //  Created by Nicolas Barbosa on 09/09/22.
-//  swiftlint:disable trailing_whitespace
-//  swiftlint:disable line_length
+//
+//
 
 import UIKit
 import CoreData
 
 final class ViewController: UIViewController {
 
-    fileprivate var viewModel = ViewModel() {
+    public var viewModel = ViewModel() {
         didSet {
             print(viewModel.getUncompletedArray().count)
             self.reloadCollection()
@@ -54,6 +54,22 @@ final class ViewController: UIViewController {
     }()
 
     public lazy var zombieCharacter: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        return imageView
+    }()
+
+    public lazy var deathAnimation: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        return imageView
+    }()
+
+    public lazy var riseAnimation: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -216,6 +232,11 @@ extension ViewController: AddTaskWindowDelegate {
         viewModel.service.addATask(for: nameTask)
         viewModel.setTaskArray()
 
+        if viewModel.getUncompletedArray().count == 1 {
+
+            self.zombieRise()
+        }
+        self.zombieDeath()
     }
 }
 
@@ -228,8 +249,7 @@ extension ViewController: ViewCoding {
             forCellWithReuseIdentifier: TasksCollectionViewCell.identifier
         )
 
-        self.startAnimations()
-
+        startAnimations()
     }
 
     func setupConstraints() {
@@ -298,6 +318,28 @@ extension ViewController: ViewCoding {
                 constant: view.bounds.width*0.08
             ),
 
+            deathAnimation.heightAnchor.constraint(equalToConstant: 105),
+            deathAnimation.widthAnchor.constraint(equalToConstant: 60),
+            deathAnimation.bottomAnchor.constraint(
+                equalTo: imageCollectionViewBackground.topAnchor,
+                constant: view.bounds.height*0.01
+            ),
+            deathAnimation.leadingAnchor.constraint(
+                equalTo: marcoCharacter.centerXAnchor,
+                constant: view.bounds.width*0.08
+            ),
+
+            riseAnimation.heightAnchor.constraint(equalToConstant: 105),
+            riseAnimation.widthAnchor.constraint(equalToConstant: 60),
+            riseAnimation.bottomAnchor.constraint(
+                equalTo: imageCollectionViewBackground.topAnchor,
+                constant: view.bounds.height*0.01
+            ),
+            riseAnimation.leadingAnchor.constraint(
+                equalTo: marcoCharacter.centerXAnchor,
+                constant: view.bounds.width*0.08
+            ),
+
             noTaskDetectedLabel.centerYAnchor.constraint(equalTo: tasksCollectionView.centerYAnchor),
             noTaskDetectedLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
 
@@ -308,6 +350,8 @@ extension ViewController: ViewCoding {
         view.addSubview(imageBackground)
         view.addSubview(imageCollectionViewBackground)
         view.addSubview(zombieCharacter)
+        view.addSubview(deathAnimation)
+        view.addSubview(riseAnimation)
         view.addSubview(marcoCharacter)
         view.addSubview(attackAnimation)
         view.addSubview(tasksCollectionView)
@@ -320,9 +364,8 @@ extension ViewController: ViewCoding {
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
         if viewModel.getUncompletedArray().count == 0 {
             self.noTaskDetectedLabel.isHidden = false
             buildLayout()
@@ -331,42 +374,36 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             self.noTaskDetectedLabel.isHidden = true
             return viewModel.getUncompletedArray().count
         }
-
     }
 
     func displayAlert(task: Task) {
+        let dialogMessage = UIAlertController(title: task.name,
+                                              message: "Are you sure you want to delete this?",
+                                              preferredStyle: .alert)
 
-        // Declare Alert message
-        let dialogMessage = UIAlertController(title: task.name, message: "Are you sure you want to delete this?", preferredStyle: .alert) //teste
-
-        // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Cancelar", style: .cancel) { _ -> Void in print("cancelado")}
 
-        // Create OK button with action handler
         let finish = UIAlertAction(title: "Finalizar", style: .default, handler: { _ -> Void in
             DispatchQueue.main.async {
                 let task = task
                 self.viewModel.service.completeATask(task)
                 self.viewModel.setTaskArray()
                 self.doAnimate()
+                self.zombieDeath()
             }
         })
 
-        // Add OK and Cancel button to dialog message
         dialogMessage.addAction(cancel)
         dialogMessage.addAction(finish)
 
-        // Present dialog message to user
         self.present(dialogMessage, animated: true, completion: nil)
     }
 
-    // ====================================================================================================================================================================
-    //                                                             VISUALIZAÇÃO DAS TELAS E DAS TAKS PRINCIPAIS
-    // ====================================================================================================================================================================
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TasksCollectionViewCell.identifier, for: indexPath) as? TasksCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TasksCollectionViewCell.identifier,
+                                                            for: indexPath) as? TasksCollectionViewCell else {
             return UICollectionViewCell()
         }
 
