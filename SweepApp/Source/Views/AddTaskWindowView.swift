@@ -109,8 +109,18 @@ final class AddTaskWindowView: UIView {
 
     @objc func addANewTask() {
         let newTaskName: String = taskNameTextField.text!
-        delegate?.addANewTask(nameTask: newTaskName)
-        dismissView()
+               var indexTest: Int = 0
+               var taskNameLimited: String = ""
+               
+               for char in newTaskName {
+                   if indexTest < 32 {
+                       taskNameLimited.append(char)
+                       indexTest += 1
+                   }
+               }
+        
+               delegate?.addANewTask(nameTask: taskNameLimited)
+               dismissView()
     }
 
 }
