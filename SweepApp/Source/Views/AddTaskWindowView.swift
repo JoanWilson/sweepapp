@@ -71,9 +71,9 @@ final class AddTaskWindowView: UIView {
         let button = UIButton(type: .roundedRect)
         button.addTarget(self, action: #selector(dismissAddTaskWindow), for: .touchUpInside)
         button.setTitle("Cancelar", for: .normal)
-        button.tintColor = .white
+        button.tintColor = .black
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.backgroundColor = .gray
+        button.backgroundColor = .white
         button.layer.cornerRadius = 5
         button.translatesAutoresizingMaskIntoConstraints = false
 
@@ -84,9 +84,9 @@ final class AddTaskWindowView: UIView {
         let button = UIButton(type: .roundedRect)
         button.addTarget(self, action: #selector(addANewTask), for: .touchUpInside)
         button.setTitle("Adicionar", for: .normal)
-        button.tintColor = .black
+        button.tintColor = .white
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.backgroundColor = .white
+        button.backgroundColor = .gray
         button.layer.cornerRadius = 5
         button.translatesAutoresizingMaskIntoConstraints = false
 
@@ -103,24 +103,48 @@ final class AddTaskWindowView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func validateTaskNameTextField() -> Bool {
+        if self.taskNameTextField.text! == "" {
+            return false
+        }
+        return true
+    }
+
+    func shakeAnimateTaskNameTextFieldWhenEmpty() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, -10, 10, 0]
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.4
+
+        animation.isAdditive = true
+        self.taskNameTextField.layer.add(animation, forKey: "shake")
+    }
+
     @objc func dismissAddTaskWindow() {
         dismissView()
     }
 
     @objc func addANewTask() {
+
+        if !validateTaskNameTextField() {
+            self.taskNameTextField.addBorders(edges: .all, color: .red)
+            self.shakeAnimateTaskNameTextFieldWhenEmpty()
+            return
+        }
+
         let newTaskName: String = taskNameTextField.text!
-               var indexTest: Int = 0
-               var taskNameLimited: String = ""
-               
-               for char in newTaskName {
-                   if indexTest < 32 {
-                       taskNameLimited.append(char)
-                       indexTest += 1
-                   }
-               }
-        
-               delegate?.addANewTask(nameTask: taskNameLimited)
-               dismissView()
+        var indexTest: Int = 0
+        var taskNameLimited: String = ""
+
+        for char in newTaskName where indexTest < 32 {
+            taskNameLimited.append(char)
+            indexTest += 1
+        }
+
+        delegate?.addANewTask(nameTask: taskNameLimited)
+        dismissView()
+
     }
 
 }
